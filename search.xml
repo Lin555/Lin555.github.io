@@ -3,6 +3,26 @@
   
     
     <entry>
+      <title><![CDATA[解决Vwmare14出现黑屏问题]]></title>
+      <url>/2017/12/24/%E8%A7%A3%E5%86%B3Vwmare14%E5%87%BA%E7%8E%B0%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
+</code></pre><p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p>
+<p>解决方法：修复LSP</p>
+<blockquote>
+<p>命令行窗口—输入netsh winsock reset<br>点击确定后重新启动下计算机就可以了</p>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Vwmare </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Linux下安装Python]]></title>
       <url>/2017/12/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Python/</url>
       <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
