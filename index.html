@@ -197,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li></ul>
                     </div>
                 </section>
                 
@@ -277,6 +277,83 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-搭建Apache虚拟目录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/24/搭建Apache虚拟目录/" class="article-date">
+      <time datetime="2017-12-24T11:41:40.000Z" itemprop="datePublished">2017-12-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/24/搭建Apache虚拟目录/">搭建Apache虚拟目录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>####搭建过程<br>1.验证Apache</p>
+<blockquote>
+<p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p>
+</blockquote>
+<p>出现下面的页面说明安装成功</p>
+<p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>2.配置Apache文件</p>
+<blockquote>
+<p>[root@localhost /]# cd /etc/httpd/conf<br>[root@localhost conf]# touch xunni.conf     //必须.conf结尾</p>
+</blockquote>
+<p>添加下面文件内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">Alias /data1 &quot;/data1/&quot;</span><br><span class="line">&lt;Directory &quot;/data1/&quot;&gt;</span><br><span class="line">Options +Indexes +FollowSymlinks</span><br><span class="line">AllowOverride All</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>3.创建虚拟目录</p>
+<blockquote>
+<p>[root@localhost conf]# cd /var/www/html/<br>[root@localhost html]# mkdir data1       //必须与apache配置文件同名<br>[root@localhost html]# echo “this is a data1” &gt; index.html</p>
+</blockquote>
+<p>在浏览器输入<a href="http://ip地址/data1" target="_blank" rel="noopener">http://ip地址/data1</a></p>
+<p><img src="http://img.blog.csdn.net/20171216171731433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   

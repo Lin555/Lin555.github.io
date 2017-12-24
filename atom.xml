@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-24T03:05:19.561Z</updated>
+  <updated>2017-12-24T11:42:45.125Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭建Apache虚拟目录</title>
+    <link href="http://yoursite.com/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/"/>
+    <id>http://yoursite.com/2017/12/24/搭建Apache虚拟目录/</id>
+    <published>2017-12-24T11:41:40.000Z</published>
+    <updated>2017-12-24T11:42:45.125Z</updated>
+    
+    <content type="html"><![CDATA[<p>####搭建过程<br>1.验证Apache</p><blockquote><p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p></blockquote><p>出现下面的页面说明安装成功</p><p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>2.配置Apache文件</p><blockquote><p>[root@localhost /]# cd /etc/httpd/conf<br>[root@localhost conf]# touch xunni.conf     //必须.conf结尾</p></blockquote><p>添加下面文件内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">Alias /data1 &quot;/data1/&quot;</span><br><span class="line">&lt;Directory &quot;/data1/&quot;&gt;</span><br><span class="line">Options +Indexes +FollowSymlinks</span><br><span class="line">AllowOverride All</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure><p>3.创建虚拟目录</p><blockquote><p>[root@localhost conf]# cd /var/www/html/<br>[root@localhost html]# mkdir data1       //必须与apache配置文件同名<br>[root@localhost html]# echo “this is a data1” &gt; index.html</p></blockquote><p>在浏览器输入<a href="http://ip地址/data1" target="_blank" rel="noopener">http://ip地址/data1</a></p><p><img src="http://img.blog.csdn.net/20171216171731433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;####搭建过程&lt;br&gt;1.验证Apache&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;[root@localhost /]# echo “this is a html “ &amp;gt; /var/www/html/index.html&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

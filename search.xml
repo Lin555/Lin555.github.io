@@ -3,6 +3,38 @@
   
     
     <entry>
+      <title><![CDATA[搭建Apache虚拟目录]]></title>
+      <url>/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>####搭建过程<br>1.验证Apache</p>
+<blockquote>
+<p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p>
+</blockquote>
+<p>出现下面的页面说明安装成功</p>
+<p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>2.配置Apache文件</p>
+<blockquote>
+<p>[root@localhost /]# cd /etc/httpd/conf<br>[root@localhost conf]# touch xunni.conf     //必须.conf结尾</p>
+</blockquote>
+<p>添加下面文件内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">Alias /data1 &quot;/data1/&quot;</span><br><span class="line">&lt;Directory &quot;/data1/&quot;&gt;</span><br><span class="line">Options +Indexes +FollowSymlinks</span><br><span class="line">AllowOverride All</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>3.创建虚拟目录</p>
+<blockquote>
+<p>[root@localhost conf]# cd /var/www/html/<br>[root@localhost html]# mkdir data1       //必须与apache配置文件同名<br>[root@localhost html]# echo “this is a data1” &gt; index.html</p>
+</blockquote>
+<p>在浏览器输入<a href="http://ip地址/data1" target="_blank" rel="noopener">http://ip地址/data1</a></p>
+<p><img src="http://img.blog.csdn.net/20171216171731433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2017/12/24/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
