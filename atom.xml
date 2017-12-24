@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-24T12:01:55.906Z</updated>
+  <updated>2017-12-24T12:11:27.380Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux下MySql命令</title>
+    <link href="http://yoursite.com/2017/12/24/linux%E4%B8%8BMySql%E5%91%BD%E4%BB%A4/"/>
+    <id>http://yoursite.com/2017/12/24/linux下MySql命令/</id>
+    <published>2017-12-24T12:10:01.000Z</published>
+    <updated>2017-12-24T12:11:27.380Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;</code></pre><p>1.显示数据库</p><blockquote><p>show databases;</p></blockquote><p>2.选择数据库</p><blockquote><p>use 数据库名；</p></blockquote><p>3.显示数据库中的表</p><blockquote><p>show tables；</p></blockquote><p>4.显示数据表的结构</p><blockquote><p>desc 表名；</p></blockquote><p>5.显示表中记录</p><blockquote><p>select * from 表名；</p></blockquote><p>6.建库</p><blockquote><p>create databases 库民；</p></blockquote><p>7.建表</p><blockquote><p>Create table 表名（字段设定列表）</p><p>例子：mysql&gt; create table student(<br>   -&gt; id int auto_increment not null primary key ,<br>   -&gt; name char(8),<br>   -&gt; set char(2),<br>           -&gt; birthday date );<br>      Query OK, 0 rows affected (0.03 sec)</p></blockquote><p>8.修改编码</p><blockquote><p>alter table table_name convert to character set utf8;</p></blockquote><p>9.增加记录</p><blockquote><p>insert into name(uname,gender,birthday) values(‘张三’,’男’,’1971-10-01’);</p></blockquote><p>10.修改记录</p><blockquote><p>update name set birthday=’1971-01-10’ where uname=’张三’;</p></blockquote><p>11.删除记录</p><blockquote><p>delete from name where uname=’张三’；</p></blockquote><p>12.删除表 </p><blockquote><p>drop table 表名；</p></blockquote><p>13.删除库</p><blockquote><p>drop databases 库名；</p></blockquote><p>14.备份数据库</p><blockquote><p>mysqldump -u root -p 数据库名&gt;备份文件——–输入数据库的密码</p></blockquote><p>15.恢复数据库</p><blockquote><p>mysql -u root -p 数据库名 &lt; 备份名 —-&gt;恢复时数据库必须存在，可以为空数据库；<br>或<br>进入数据库—–&gt;创建数据库名—–&gt;source   要导入的数据库文件<br>例如：mysql  -uroot -ppassword—–&gt;use name;——–&gt;source  name.db</p></blockquote><p>16.备份数据库中的表</p><blockquote><p>mysqldump -u root -p –opt 数据库名 表名 &lt; 备份文件；</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.显示数据库&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;show databases;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2.选择数据库&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World - 文章教程</title>
+    <link href="http://yoursite.com/2017/12/24/hello-world/"/>
+    <id>http://yoursite.com/2017/12/24/hello-world/</id>
+    <published>2017-12-24T12:04:13.148Z</published>
+    <updated>2017-12-24T12:04:13.108Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Redhat快速安装LAMP和WordPress</title>
@@ -39,25 +88,6 @@
     
     
       <category term="redhat" scheme="http://yoursite.com/tags/redhat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/12/24/hello-world/"/>
-    <id>http://yoursite.com/2017/12/24/hello-world/</id>
-    <published>2017-12-24T11:54:14.270Z</published>
-    <updated>2017-12-24T11:54:14.258Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><a id="more"></a><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;
-    
-    </summary>
-    
     
   </entry>
   
