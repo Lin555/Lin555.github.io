@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="在我们下载完Vwmare14，启动vwmare时出现黑屏现象 解决方法：修复LSP">
-<meta name="keywords" content="Vwmare">
+<meta name="description" content="1.修改主机名和部署DNS服务器  [root@mail ~]# hostnamemail.disanzu.com  部署DNF服务器可以参考我的另一篇安装DNS服务器的博客  http://blog.csdn.net/lin_haobin/article/details/73252815">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决Vwmare14出现黑屏问题">
-<meta property="og:url" content="http://yoursite.com/2017/12/24/解决Vwmare14出现黑屏问题/index.html">
+<meta property="og:title" content="Linux搭建postfix邮件服务器">
+<meta property="og:url" content="http://yoursite.com/2017/12/28/Linux搭建postfix邮件服务器/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="在我们下载完Vwmare14，启动vwmare时出现黑屏现象 解决方法：修复LSP">
+<meta property="og:description" content="1.修改主机名和部署DNS服务器  [root@mail ~]# hostnamemail.disanzu.com  部署DNF服务器可以参考我的另一篇安装DNS服务器的博客  http://blog.csdn.net/lin_haobin/article/details/73252815">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T02:46:45.955Z">
+<meta property="og:updated_time" content="2017-12-28T03:22:50.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决Vwmare14出现黑屏问题">
-<meta name="twitter:description" content="在我们下载完Vwmare14，启动vwmare时出现黑屏现象 解决方法：修复LSP">
+<meta name="twitter:title" content="Linux搭建postfix邮件服务器">
+<meta name="twitter:description" content="1.修改主机名和部署DNS服务器  [root@mail ~]# hostnamemail.disanzu.com  部署DNF服务器可以参考我的另一篇安装DNS服务器的博客  http://blog.csdn.net/lin_haobin/article/details/73252815">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>解决Vwmare14出现黑屏问题 | Lin_haobin&#39;s Blog</title>
+<title>Linux搭建postfix邮件服务器 | Lin_haobin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-解决Vwmare14出现黑屏问题" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux搭建postfix邮件服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/24/解决Vwmare14出现黑屏问题/" class="article-date">
-      <time datetime="2017-12-24T12:22:29.000Z" itemprop="datePublished">2017-12-24</time>
+      <a href="/2017/12/28/Linux搭建postfix邮件服务器/" class="article-date">
+      <time datetime="2017-12-28T03:14:42.000Z" itemprop="datePublished">2017-12-28</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      解决Vwmare14出现黑屏问题
+      Linux搭建postfix邮件服务器
     </h1>
   
 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vwmare/">Vwmare</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,11 +315,83 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p>
-<p>解决方法：修复LSP</p>
-<a id="more"></a>
+        <p>1.修改主机名和部署DNS服务器</p>
 <blockquote>
-<p>命令行窗口—输入netsh winsock reset<br>点击确定后重新启动下计算机就可以了</p>
+<p>[root@mail ~]# hostname<br>mail.disanzu.com</p>
+</blockquote>
+<p>部署DNF服务器可以参考我的另一篇安装DNS服务器的博客</p>
+<blockquote>
+<p><a href="http://blog.csdn.net/lin_haobin/article/details/73252815" target="_blank" rel="noopener">http://blog.csdn.net/lin_haobin/article/details/73252815</a><br><a id="more"></a><br>2.安装postfix服务器<br>[root@mail ~]# yum -y install postfix</p>
+</blockquote>
+<p>3.修改postfix配置文件</p>
+<blockquote>
+<p>[root@mail ~]# vim  /etc/postfix/main.cf    </p>
+</blockquote>
+<p>修改以下内容</p>
+<blockquote>
+<p>myhostname = 你的邮件域名</p>
+</blockquote>
+<p>设置服务器主机名</p>
+<blockquote>
+<p>mydomain = 你的域名  </p>
+</blockquote>
+<p>设置服务器的域名</p>
+<blockquote>
+<p>myorigin = $mydomain</p>
+</blockquote>
+<p>定义寄出邮件的域</p>
+<blockquote>
+<p>inet_interfaces = all</p>
+</blockquote>
+<p>指定要由服务器的哪些地址对外提供电子邮件服务</p>
+<blockquote>
+<p>mydestination = $myhostname, $mydomain<br>修改完后保存退出</p>
+</blockquote>
+<p>重启下postfix服务器</p>
+<blockquote>
+<p>systemctl restart postfix.service</p>
+</blockquote>
+<p>4.安装dovecot服务程序</p>
+<blockquote>
+<p>[root@mail ~]# yum -y install dovecot</p>
+</blockquote>
+<p>5.修改dovecot主配置文件</p>
+<blockquote>
+<p>[root@mail ~]# vim /etc/dovecot/dovecot.conf </p>
+</blockquote>
+<p>更改以下几点<br>设置支持的电子邮件协议</p>
+<blockquote>
+<p>protocols = imap pop3 lmtp</p>
+</blockquote>
+<p>允许用户明文登录（这一条需要自己手动添加）</p>
+<blockquote>
+<p>disable_plaintext_auth = no</p>
+</blockquote>
+<p>这里的IP为网络为即192.168.10.0/24</p>
+<blockquote>
+<p>login_trusted_networks = 服务器ip/24</p>
+</blockquote>
+<p>6.修改dovecot子配置文件<br>定义接受到邮件保存到服务器的哪个目录下</p>
+<blockquote>
+<p>[root@mail ~]# vim /etc/dovecot/conf.d/10-mail.conf<br>mail_location = mbox:~/mail:INBOX=/var/mail/%u</p>
+</blockquote>
+<p>更改完后重启下程序</p>
+<blockquote>
+<p>systemctl restart dovecot</p>
+</blockquote>
+<p>7.创建邮件用户，并创建存放目录</p>
+<blockquote>
+<p>[root@mail ~]# useradd text<br>[root@mail ~]#su - text<br>[text@mail ~]$ mkdir -p mail/.imap/INBOX/<br>[text@mail ~]$ su - root</p>
+</blockquote>
+<p>8.发送邮件<br>发送邮件   “mail”是这封邮件的名称</p>
+<blockquote>
+<p>[root@mail ~]# echo “this is a mail “ |mail -s “mail”  text@disanzu.com</p>
+</blockquote>
+<p>9.验证邮件</p>
+<blockquote>
+<p>[root@mail ~]# su - text<br>[text@mail ~]$ mail<br>Heirloom Mail version 12.4 7/29/08.  Type ? for help.<br>“/var/spool/mail/text”: 6 messages 6 new<br>N  1 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  2 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  3 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  4 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  5 root                  Thu Jun 15 16:44  22/799   “text mail”<br> N  6 root                  Thu Jun 15 16:57  22/790   “mail”<br>&amp; 6<br>Message  6:<br>From root@mail.disanzu.com  Thu Jun 15 16:57:48 2017<br>Return-Path: <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x72;&#111;&#x6f;&#116;&#x40;&#109;&#x61;&#105;&#108;&#x2e;&#x64;&#105;&#115;&#x61;&#110;&#122;&#117;&#x2e;&#x63;&#x6f;&#x6d;">&#x72;&#111;&#x6f;&#116;&#x40;&#109;&#x61;&#105;&#108;&#x2e;&#x64;&#105;&#115;&#x61;&#110;&#122;&#117;&#x2e;&#x63;&#x6f;&#x6d;</a><br>X-Original-To: text@disanzu.com<br>Delivered-To: text@disanzu.com<br>From: root <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x72;&#111;&#x6f;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#46;&#x64;&#x69;&#115;&#97;&#x6e;&#122;&#117;&#46;&#x63;&#x6f;&#109;">&#x72;&#111;&#x6f;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#46;&#x64;&#x69;&#115;&#97;&#x6e;&#122;&#117;&#46;&#x63;&#x6f;&#109;</a><br>Date: Thu, 15 Jun 2017 16:57:48 -0400<br>To: text@disanzu.com<br>Subject: mail<br>User-Agent: Heirloom mailx 12.4 7/29/08<br>Content-Type: text/plain; charset=us-ascii<br>Status: R</p>
+<p>this is a mail </p>
+<p>&amp; </p>
 </blockquote>
 
       
@@ -329,13 +401,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/24/解决Vwmare14出现黑屏问题/">解决Vwmare14出现黑屏问题</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/28/Linux搭建postfix邮件服务器/">Linux搭建postfix邮件服务器</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
-        <p><span>发布时间:</span>2017-12-24, 20:22:29</p>
-        <p><span>最后更新:</span>2017-12-28, 10:46:45</p>
+        <p><span>发布时间:</span>2017-12-28, 11:14:42</p>
+        <p><span>最后更新:</span>2017-12-28, 11:22:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/24/解决Vwmare14出现黑屏问题/" title="解决Vwmare14出现黑屏问题">http://yoursite.com/2017/12/24/解决Vwmare14出现黑屏问题/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/24/解决Vwmare14出现黑屏问题/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/28/Linux搭建postfix邮件服务器/" title="Linux搭建postfix邮件服务器">http://yoursite.com/2017/12/28/Linux搭建postfix邮件服务器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/28/Linux搭建postfix邮件服务器/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,16 +419,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/28/MySQL主主复制原理及搭建/">
-                    MySQL主主复制原理及搭建
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/24/Linux下安装Python/">
-                    Linux下安装Python
+                <a href="/2017/12/28/MySQL主从复制原理及搭建/">
+                    MySQL主从复制原理及搭建
                 </a>
             </div>
         
@@ -404,7 +470,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"解决Vwmare14出现黑屏问题　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Linux搭建postfix邮件服务器　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -424,15 +490,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/28/MySQL主主复制原理及搭建/" title="上一篇: MySQL主主复制原理及搭建">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/24/Linux下安装Python/" title="下一篇: Linux下安装Python">
+            <a href="/2017/12/28/MySQL主从复制原理及搭建/" title="下一篇: MySQL主从复制原理及搭建">
                 <i class="fa fa-angle-right"></i>
             </a>
         
