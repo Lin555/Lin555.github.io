@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-24T12:23:34.467Z</updated>
+  <updated>2017-12-28T02:46:45.955Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,20 +21,14 @@
     <link href="http://yoursite.com/2017/12/24/%E8%A7%A3%E5%86%B3Vwmare14%E5%87%BA%E7%8E%B0%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2017/12/24/解决Vwmare14出现黑屏问题/</id>
     <published>2017-12-24T12:22:29.000Z</published>
-    <updated>2017-12-24T12:23:34.467Z</updated>
+    <updated>2017-12-28T02:46:45.955Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;</code></pre><p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p><p>解决方法：修复LSP</p><blockquote><p>命令行窗口—输入netsh winsock reset<br>点击确定后重新启动下计算机就可以了</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p><p>解决方法：修复LSP</p><a id="more"></a><blockquote><p>命令行窗口—输入netsh winsock reset<br>点击确定后重新启动下计算机就可以了</p></blockquote>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;在我们下载完Vwmare14，启动vwmare时出现黑屏现象&lt;/p&gt;
+      &lt;p&gt;在我们下载完Vwmare14，启动vwmare时出现黑屏现象&lt;/p&gt;
 &lt;p&gt;解决方法：修复LSP&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;命令行窗口—输入netsh winsock re
-      
     
     </summary>
     
@@ -71,23 +65,19 @@
     <link href="http://yoursite.com/2017/12/24/linux%E4%B8%8BMySql%E5%91%BD%E4%BB%A4/"/>
     <id>http://yoursite.com/2017/12/24/linux下MySql命令/</id>
     <published>2017-12-24T12:10:01.000Z</published>
-    <updated>2017-12-24T12:11:27.380Z</updated>
+    <updated>2017-12-28T02:47:19.653Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;</code></pre><p>1.显示数据库</p><blockquote><p>show databases;</p></blockquote><p>2.选择数据库</p><blockquote><p>use 数据库名；</p></blockquote><p>3.显示数据库中的表</p><blockquote><p>show tables；</p></blockquote><p>4.显示数据表的结构</p><blockquote><p>desc 表名；</p></blockquote><p>5.显示表中记录</p><blockquote><p>select * from 表名；</p></blockquote><p>6.建库</p><blockquote><p>create databases 库民；</p></blockquote><p>7.建表</p><blockquote><p>Create table 表名（字段设定列表）</p><p>例子：mysql&gt; create table student(<br>   -&gt; id int auto_increment not null primary key ,<br>   -&gt; name char(8),<br>   -&gt; set char(2),<br>           -&gt; birthday date );<br>      Query OK, 0 rows affected (0.03 sec)</p></blockquote><p>8.修改编码</p><blockquote><p>alter table table_name convert to character set utf8;</p></blockquote><p>9.增加记录</p><blockquote><p>insert into name(uname,gender,birthday) values(‘张三’,’男’,’1971-10-01’);</p></blockquote><p>10.修改记录</p><blockquote><p>update name set birthday=’1971-01-10’ where uname=’张三’;</p></blockquote><p>11.删除记录</p><blockquote><p>delete from name where uname=’张三’；</p></blockquote><p>12.删除表 </p><blockquote><p>drop table 表名；</p></blockquote><p>13.删除库</p><blockquote><p>drop databases 库名；</p></blockquote><p>14.备份数据库</p><blockquote><p>mysqldump -u root -p 数据库名&gt;备份文件——–输入数据库的密码</p></blockquote><p>15.恢复数据库</p><blockquote><p>mysql -u root -p 数据库名 &lt; 备份名 —-&gt;恢复时数据库必须存在，可以为空数据库；<br>或<br>进入数据库—–&gt;创建数据库名—–&gt;source   要导入的数据库文件<br>例如：mysql  -uroot -ppassword—–&gt;use name;——–&gt;source  name.db</p></blockquote><p>16.备份数据库中的表</p><blockquote><p>mysqldump -u root -p –opt 数据库名 表名 &lt; 备份文件；</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>1.显示数据库</p><blockquote><p>show databases;</p></blockquote><p>2.选择数据库</p><blockquote><p>use 数据库名；<br><a id="more"></a><br>3.显示数据库中的表<br>show tables；</p></blockquote><p>4.显示数据表的结构</p><blockquote><p>desc 表名；</p></blockquote><p>5.显示表中记录</p><blockquote><p>select * from 表名；</p></blockquote><p>6.建库</p><blockquote><p>create databases 库民；</p></blockquote><p>7.建表</p><blockquote><p>Create table 表名（字段设定列表）</p><p>例子：mysql&gt; create table student(<br>   -&gt; id int auto_increment not null primary key ,<br>   -&gt; name char(8),<br>   -&gt; set char(2),<br>           -&gt; birthday date );<br>      Query OK, 0 rows affected (0.03 sec)</p></blockquote><p>8.修改编码</p><blockquote><p>alter table table_name convert to character set utf8;</p></blockquote><p>9.增加记录</p><blockquote><p>insert into name(uname,gender,birthday) values(‘张三’,’男’,’1971-10-01’);</p></blockquote><p>10.修改记录</p><blockquote><p>update name set birthday=’1971-01-10’ where uname=’张三’;</p></blockquote><p>11.删除记录</p><blockquote><p>delete from name where uname=’张三’；</p></blockquote><p>12.删除表 </p><blockquote><p>drop table 表名；</p></blockquote><p>13.删除库</p><blockquote><p>drop databases 库名；</p></blockquote><p>14.备份数据库</p><blockquote><p>mysqldump -u root -p 数据库名&gt;备份文件——–输入数据库的密码</p></blockquote><p>15.恢复数据库</p><blockquote><p>mysql -u root -p 数据库名 &lt; 备份名 —-&gt;恢复时数据库必须存在，可以为空数据库；<br>或<br>进入数据库—–&gt;创建数据库名—–&gt;source   要导入的数据库文件<br>例如：mysql  -uroot -ppassword—–&gt;use name;——–&gt;source  name.db</p></blockquote><p>16.备份数据库中的表</p><blockquote><p>mysqldump -u root -p –opt 数据库名 表名 &lt; 备份文件；</p></blockquote>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.显示数据库&lt;/p&gt;
+      &lt;p&gt;1.显示数据库&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;show databases;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;2.选择数据库&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;
-      
+&lt;p&gt;use 数据库名；&lt;br&gt;
     
     </summary>
     
@@ -101,19 +91,15 @@
     <link href="http://yoursite.com/2017/12/24/Redhat%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85LAMP%E5%92%8CWordPress/"/>
     <id>http://yoursite.com/2017/12/24/Redhat快速安装LAMP和WordPress/</id>
     <published>2017-12-24T11:59:55.000Z</published>
-    <updated>2017-12-24T12:01:55.906Z</updated>
+    <updated>2017-12-28T02:48:27.838Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;</code></pre><p>####一、安装环境</p><blockquote><p>[root@lin_haobin ~]# more /etc/redhat-release<br>Red Hat Enterprise Linux Server release 7.0 (Maipo)</p></blockquote><p>####二、基于yum方式安装httpd、php、mariadb</p><blockquote><p>[root@lin_haobin ~]# yum -y install httpd<br>[root@lin_haobin ~]# yum -y install mariadb-server<br>[root@lin_haobin ~]# yum -y install php  php-mysql</p></blockquote><p>#####验证安装包</p><blockquote><p>[root@lin_haobin ~]# rpm -qa|grep httpd<br>httpd-2.4.6-17.el7.x86_64<br>httpd-tools-2.4.6-17.el7.x86_64</p><p>[root@lin_haobin ~]# rpm -qa|grep php<br>php-pdo-5.4.16-21.el7.x86_64<br>php-common-5.4.16-21.el7.x86_64<br>php-mysql-5.4.16-21.el7.x86_64<br>php-5.4.16-21.el7.x86_64<br>php-cli-5.4.16-21.el7.x86_64</p><p>[root@lin_haobin ~]# rpm -qa|grep maria<br>mariadb-5.5.35-3.el7.x86_64<br>mariadb-server-5.5.35-3.el7.x86_64<br>mariadb-libs-5.5.35-3.el7.x86_64</p></blockquote><p>启动httpd</p><blockquote><p>[root@lin_haobin ~]# systemctl start httpd</p></blockquote><p>验证httpd</p><blockquote><p>[root@lin_haobin ~]# echo “The httpd is running.”&gt;/var/www/html/index.html</p></blockquote><p>在浏览器输入<a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>    出现下面的页面则说明httpd安装成功<br><img src="http://img.blog.csdn.net/20171211211504783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>启动mariadb</p><blockquote><p>[root@lin_haobin ~]# systemctl start mariadb</p></blockquote><p>验证mariadb</p><blockquote><p>[root@lin_haobin ~]# mysql<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 2<br>Server version: 5.5.35-MariaDB MariaDB Server</p><p>Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.</p><p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p><p>MariaDB [(none)]&gt; show variables like ‘version’;<br>+—————+—————-+<br>| Variable_name | Value          |<br>+—————+—————-+<br>| version       | 5.5.35-MariaDB |<br>+—————+—————-+<br>1 row in set (0.01 sec)</p><p>MariaDB [(none)]&gt; exit<br>Bye</p></blockquote><p>测试php</p><blockquote><p>[root@lin_haobin ~]# echo “<br>The PHP is running.<br>?php<br>phpinfo();<br>?&gt;<br>“&gt;/var/www/html/index.php </p></blockquote><p>在浏览器输入<a href="http://localhost/index.php出现下面的页面则说明php安装成功" target="_blank" rel="noopener">http://localhost/index.php出现下面的页面则说明php安装成功</a></p><p><img src="http://img.blog.csdn.net/20171211212348203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>###三、安装及配置Wordpress</p><p>将WordPress上传到服务器</p><blockquote><p>[root@lin_haobin Desktop]# ll<br>total 9032<br>-rw-r–r–. 1 root root 9245300 Dec 11 16:04 wordpress-4.7.4-zh_CN.zip</p></blockquote><p>解压WordPress，并解压到/var/www/html/目录下,并配置</p><blockquote><p>[root@lin_haobin Desktop]# unzip -q wordpress-4.7.4-zh_CN.zip -d /var/www/html/<br>[root@lin_haobin Desktop]# cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php<br>[root@lin_haobin Desktop]# vim /var/www/html/wordpress/wp-config.php<br>/<em>* WordPress数据库的名称 </em>/</p><p>define(‘DB_NAME’, ‘wordpress’);</p><p>/<em>* MySQL数据库用户名 </em>/</p></blockquote><p>define(‘DB_USER’, ‘admin’);</p><blockquote><p>/<em>* MySQL数据库密码 </em>/</p></blockquote><p>define(‘DB_PASSWORD’, ‘admin’);</p><blockquote><p>/<em>* MySQL主机 </em>/</p></blockquote><p>define(‘DB_HOST’, ‘localhost’);</p><blockquote><p>/<em>* 创建数据表时默认的文字编码 </em>/</p></blockquote><p>define(‘DB_CHARSET’, ‘utf8’);</p><blockquote><p>/<em>* 数据库整理类型。如不确定请勿更改 </em>/</p></blockquote><p>define(‘DB_COLLATE’, ‘’);</p><p>创建wordpress数据库及用户</p><blockquote><p>[root@lin_haobin Desktop]#mysql<br>MariaDB [(none)]&gt; create database wordpress character set utf8;<br>Query OK, 1 row affected (0.00 sec)</p><p>MariaDB [(none)]&gt; grant all privileges on wordpress.* to ‘admin’@’localhost’ identified by ‘admin’;<br>Query OK, 0 rows affected (0.00 sec)</p><p>MariaDB [(none)]&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)</p></blockquote><p>####配置wordpress</p><p>打开浏览器完成wordpress配置<br>在浏览器输入<a href="http://localhost/wordpress" target="_blank" rel="noopener">http://localhost/wordpress</a></p><p><img src="http://img.blog.csdn.net/20171211213011298?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>填写信息，点击安装WordPress</p><p><img src="http://img.blog.csdn.net/20171211213227798?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>输入密码，点击登录</p><p><img src="http://img.blog.csdn.net/20171211213333821?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p><img src="http://img.blog.csdn.net/20171211213353074?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>出现上面的页面证明WordPress已经安装完成了。</p>]]></content>
+    <content type="html"><![CDATA[<p>####一、安装环境</p><blockquote><p>[root@lin_haobin ~]# more /etc/redhat-release<br>Red Hat Enterprise Linux Server release 7.0 (Maipo)<br><a id="more"></a></p><p>####二、基于yum方式安装httpd、php、mariadb</p><p>[root@lin_haobin ~]# yum -y install httpd<br>[root@lin_haobin ~]# yum -y install mariadb-server<br>[root@lin_haobin ~]# yum -y install php  php-mysql</p></blockquote><p>#####验证安装包</p><blockquote><p>[root@lin_haobin ~]# rpm -qa|grep httpd<br>httpd-2.4.6-17.el7.x86_64<br>httpd-tools-2.4.6-17.el7.x86_64</p><p>[root@lin_haobin ~]# rpm -qa|grep php<br>php-pdo-5.4.16-21.el7.x86_64<br>php-common-5.4.16-21.el7.x86_64<br>php-mysql-5.4.16-21.el7.x86_64<br>php-5.4.16-21.el7.x86_64<br>php-cli-5.4.16-21.el7.x86_64</p><p>[root@lin_haobin ~]# rpm -qa|grep maria<br>mariadb-5.5.35-3.el7.x86_64<br>mariadb-server-5.5.35-3.el7.x86_64<br>mariadb-libs-5.5.35-3.el7.x86_64</p></blockquote><p>启动httpd</p><blockquote><p>[root@lin_haobin ~]# systemctl start httpd</p></blockquote><p>验证httpd</p><blockquote><p>[root@lin_haobin ~]# echo “The httpd is running.”&gt;/var/www/html/index.html</p></blockquote><p>在浏览器输入<a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>    出现下面的页面则说明httpd安装成功<br><img src="http://img.blog.csdn.net/20171211211504783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>启动mariadb</p><blockquote><p>[root@lin_haobin ~]# systemctl start mariadb</p></blockquote><p>验证mariadb</p><blockquote><p>[root@lin_haobin ~]# mysql<br>Welcome to the MariaDB monitor.  Commands end with ; or \g.<br>Your MariaDB connection id is 2<br>Server version: 5.5.35-MariaDB MariaDB Server</p><p>Copyright (c) 2000, 2013, Oracle, Monty Program Ab and others.</p><p>Type ‘help;’ or ‘\h’ for help. Type ‘\c’ to clear the current input statement.</p><p>MariaDB [(none)]&gt; show variables like ‘version’;<br>+—————+—————-+<br>| Variable_name | Value          |<br>+—————+—————-+<br>| version       | 5.5.35-MariaDB |<br>+—————+—————-+<br>1 row in set (0.01 sec)</p><p>MariaDB [(none)]&gt; exit<br>Bye</p></blockquote><p>测试php</p><blockquote><p>[root@lin_haobin ~]# echo “<br>The PHP is running.<br>?php<br>phpinfo();<br>?&gt;<br>“&gt;/var/www/html/index.php </p></blockquote><p>在浏览器输入<a href="http://localhost/index.php出现下面的页面则说明php安装成功" target="_blank" rel="noopener">http://localhost/index.php出现下面的页面则说明php安装成功</a></p><p><img src="http://img.blog.csdn.net/20171211212348203?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>###三、安装及配置Wordpress</p><p>将WordPress上传到服务器</p><blockquote><p>[root@lin_haobin Desktop]# ll<br>total 9032<br>-rw-r–r–. 1 root root 9245300 Dec 11 16:04 wordpress-4.7.4-zh_CN.zip</p></blockquote><p>解压WordPress，并解压到/var/www/html/目录下,并配置</p><blockquote><p>[root@lin_haobin Desktop]# unzip -q wordpress-4.7.4-zh_CN.zip -d /var/www/html/<br>[root@lin_haobin Desktop]# cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-config.php<br>[root@lin_haobin Desktop]# vim /var/www/html/wordpress/wp-config.php<br>/<em>* WordPress数据库的名称 </em>/</p><p>define(‘DB_NAME’, ‘wordpress’);</p><p>/<em>* MySQL数据库用户名 </em>/</p></blockquote><p>define(‘DB_USER’, ‘admin’);</p><blockquote><p>/<em>* MySQL数据库密码 </em>/</p></blockquote><p>define(‘DB_PASSWORD’, ‘admin’);</p><blockquote><p>/<em>* MySQL主机 </em>/</p></blockquote><p>define(‘DB_HOST’, ‘localhost’);</p><blockquote><p>/<em>* 创建数据表时默认的文字编码 </em>/</p></blockquote><p>define(‘DB_CHARSET’, ‘utf8’);</p><blockquote><p>/<em>* 数据库整理类型。如不确定请勿更改 </em>/</p></blockquote><p>define(‘DB_COLLATE’, ‘’);</p><p>创建wordpress数据库及用户</p><blockquote><p>[root@lin_haobin Desktop]#mysql<br>MariaDB [(none)]&gt; create database wordpress character set utf8;<br>Query OK, 1 row affected (0.00 sec)</p><p>MariaDB [(none)]&gt; grant all privileges on wordpress.* to ‘admin’@’localhost’ identified by ‘admin’;<br>Query OK, 0 rows affected (0.00 sec)</p><p>MariaDB [(none)]&gt; flush privileges;<br>Query OK, 0 rows affected (0.00 sec)</p></blockquote><p>####配置wordpress</p><p>打开浏览器完成wordpress配置<br>在浏览器输入<a href="http://localhost/wordpress" target="_blank" rel="noopener">http://localhost/wordpress</a></p><p><img src="http://img.blog.csdn.net/20171211213011298?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>填写信息，点击安装WordPress</p><p><img src="http://img.blog.csdn.net/20171211213227798?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>输入密码，点击登录</p><p><img src="http://img.blog.csdn.net/20171211213333821?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p><img src="http://img.blog.csdn.net/20171211213353074?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>出现上面的页面证明WordPress已经安装完成了。</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;####一、安装环境&lt;/p&gt;
+      &lt;p&gt;####一、安装环境&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;[root@lin_haobin ~]# more /etc/redhat-release&lt;br&gt;Red Hat Enter
-      
+&lt;p&gt;[root@lin_haobin ~]# more /etc/redhat-release&lt;br&gt;Red Hat Enterprise Linux Server release 7.0 (Maipo)&lt;br&gt;
     
     </summary>
     
@@ -127,19 +113,16 @@
     <link href="http://yoursite.com/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/"/>
     <id>http://yoursite.com/2017/12/24/搭建Apache虚拟目录/</id>
     <published>2017-12-24T11:41:40.000Z</published>
-    <updated>2017-12-24T11:57:32.098Z</updated>
+    <updated>2017-12-28T02:49:17.229Z</updated>
     
-    <content type="html"><![CDATA[ <a id="more"></a><p>####搭建过程<br>1.验证Apache</p><blockquote><p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p></blockquote><p>出现下面的页面说明安装成功</p><p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>2.配置Apache文件</p><blockquote><p>[root@localhost /]# cd /etc/httpd/conf<br>[root@localhost conf]# touch xunni.conf     //必须.conf结尾</p></blockquote><p>添加下面文件内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">Alias /data1 &quot;/data1/&quot;</span><br><span class="line">&lt;Directory &quot;/data1/&quot;&gt;</span><br><span class="line">Options +Indexes +FollowSymlinks</span><br><span class="line">AllowOverride All</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure><p>3.创建虚拟目录</p><blockquote><p>[root@localhost conf]# cd /var/www/html/<br>[root@localhost html]# mkdir data1       //必须与apache配置文件同名<br>[root@localhost html]# echo “this is a data1” &gt; index.html</p></blockquote><p>在浏览器输入<a href="http://ip地址/data1" target="_blank" rel="noopener">http://ip地址/data1</a></p><p><img src="http://img.blog.csdn.net/20171216171731433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>]]></content>
+    <content type="html"><![CDATA[<p>####搭建过程<br>1.验证Apache</p><blockquote><p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p></blockquote><a id="more"></a><p>出现下面的页面说明安装成功</p><p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p><p>2.配置Apache文件</p><blockquote><p>[root@localhost /]# cd /etc/httpd/conf<br>[root@localhost conf]# touch xunni.conf     //必须.conf结尾</p></blockquote><p>添加下面文件内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">Alias /data1 &quot;/data1/&quot;</span><br><span class="line">&lt;Directory &quot;/data1/&quot;&gt;</span><br><span class="line">Options +Indexes +FollowSymlinks</span><br><span class="line">AllowOverride All</span><br><span class="line">Require all granted</span><br><span class="line">&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure><p>3.创建虚拟目录</p><blockquote><p>[root@localhost conf]# cd /var/www/html/<br>[root@localhost html]# mkdir data1       //必须与apache配置文件同名<br>[root@localhost html]# echo “this is a data1” &gt; index.html</p></blockquote><p>在浏览器输入<a href="http://ip地址/data1" target="_blank" rel="noopener">http://ip地址/data1</a></p><p><img src="http://img.blog.csdn.net/20171216171731433?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>]]></content>
     
     <summary type="html">
     
-      
-      
-         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;####搭建过程&lt;br&gt;1.验证Apache&lt;/p&gt;
+      &lt;p&gt;####搭建过程&lt;br&gt;1.验证Apache&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;[root@localhost /]# echo “this is a html “ &amp;gt; /var/www/html/index.html&lt;/p
-      
+&lt;p&gt;[root@localhost /]# echo “this is a html “ &amp;gt; /var/www/html/index.html&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

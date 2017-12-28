@@ -5,9 +5,9 @@
     <entry>
       <title><![CDATA[解决Vwmare14出现黑屏问题]]></title>
       <url>/2017/12/24/%E8%A7%A3%E5%86%B3Vwmare14%E5%87%BA%E7%8E%B0%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
-</code></pre><p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p>
+      <content type="html"><![CDATA[<p>在我们下载完Vwmare14，启动vwmare时出现黑屏现象</p>
 <p>解决方法：修复LSP</p>
+<a id="more"></a>
 <blockquote>
 <p>命令行窗口—输入netsh winsock reset<br>点击确定后重新启动下计算机就可以了</p>
 </blockquote>
@@ -56,18 +56,13 @@
     <entry>
       <title><![CDATA[linux下MySql命令]]></title>
       <url>/2017/12/24/linux%E4%B8%8BMySql%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
-</code></pre><p>1.显示数据库</p>
+      <content type="html"><![CDATA[<p>1.显示数据库</p>
 <blockquote>
 <p>show databases;</p>
 </blockquote>
 <p>2.选择数据库</p>
 <blockquote>
-<p>use 数据库名；</p>
-</blockquote>
-<p>3.显示数据库中的表</p>
-<blockquote>
-<p>show tables；</p>
+<p>use 数据库名；<br><a id="more"></a><br>3.显示数据库中的表<br>show tables；</p>
 </blockquote>
 <p>4.显示数据表的结构</p>
 <blockquote>
@@ -136,13 +131,10 @@
     <entry>
       <title><![CDATA[Redhat快速安装LAMP和WordPress]]></title>
       <url>/2017/12/24/Redhat%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85LAMP%E5%92%8CWordPress/</url>
-      <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
-</code></pre><p>####一、安装环境</p>
+      <content type="html"><![CDATA[<p>####一、安装环境</p>
 <blockquote>
-<p>[root@lin_haobin ~]# more /etc/redhat-release<br>Red Hat Enterprise Linux Server release 7.0 (Maipo)</p>
-</blockquote>
+<p>[root@lin_haobin ~]# more /etc/redhat-release<br>Red Hat Enterprise Linux Server release 7.0 (Maipo)<br><a id="more"></a></p>
 <p>####二、基于yum方式安装httpd、php、mariadb</p>
-<blockquote>
 <p>[root@lin_haobin ~]# yum -y install httpd<br>[root@lin_haobin ~]# yum -y install mariadb-server<br>[root@lin_haobin ~]# yum -y install php  php-mysql</p>
 </blockquote>
 <p>#####验证安装包</p>
@@ -235,11 +227,11 @@
     <entry>
       <title><![CDATA[搭建Apache虚拟目录]]></title>
       <url>/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/</url>
-      <content type="html"><![CDATA[ <a id="more"></a>
-<p>####搭建过程<br>1.验证Apache</p>
+      <content type="html"><![CDATA[<p>####搭建过程<br>1.验证Apache</p>
 <blockquote>
 <p>[root@localhost /]# echo “this is a html “ &gt; /var/www/html/index.html</p>
 </blockquote>
+<a id="more"></a>
 <p>出现下面的页面说明安装成功</p>
 <p><img src="http://img.blog.csdn.net/20171216170835230?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGluX2hhb2Jpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>2.配置Apache文件</p>
