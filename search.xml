@@ -25,11 +25,11 @@
     <entry>
       <title><![CDATA[Linux下安装Python]]></title>
       <url>/2017/12/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Python/</url>
-      <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;
-</code></pre><p>1.下载python压缩包(这里这的是python2.7版本)</p>
+      <content type="html"><![CDATA[<p>1.下载python压缩包(这里这的是python2.7版本)</p>
 <blockquote>
 <p>wget   <a href="https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz" target="_blank" rel="noopener">https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz</a></p>
 </blockquote>
+<a id="more"></a>
 <p>2.解压python压缩包</p>
 <blockquote>
 <p>tar  -xvf Python-2.7.11.tgz</p>

@@ -48,19 +48,16 @@
     <link href="http://yoursite.com/2017/12/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Python/"/>
     <id>http://yoursite.com/2017/12/24/Linux下安装Python/</id>
     <published>2017-12-24T12:17:58.000Z</published>
-    <updated>2017-12-24T12:19:26.624Z</updated>
+    <updated>2017-12-28T02:30:30.330Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>&lt;!-- more --&gt;</code></pre><p>1.下载python压缩包(这里这的是python2.7版本)</p><blockquote><p>wget   <a href="https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz" target="_blank" rel="noopener">https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz</a></p></blockquote><p>2.解压python压缩包</p><blockquote><p>tar  -xvf Python-2.7.11.tgz</p></blockquote><p>3.编辑文件包并编译源码包</p><blockquote><p>cdPython-2.7.11<br>  ./configure<br>make<br>make install</p></blockquote><p>4.创建软链接</p><blockquote><p>cd /usr/bin/<br>rm -rf python<br>ln -s /usr/local/Python-x.x.x/bin/python ./python</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>1.下载python压缩包(这里这的是python2.7版本)</p><blockquote><p>wget   <a href="https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz" target="_blank" rel="noopener">https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz</a></p></blockquote><a id="more"></a><p>2.解压python压缩包</p><blockquote><p>tar  -xvf Python-2.7.11.tgz</p></blockquote><p>3.编辑文件包并编译源码包</p><blockquote><p>cdPython-2.7.11<br>  ./configure<br>make<br>make install</p></blockquote><p>4.创建软链接</p><blockquote><p>cd /usr/bin/<br>rm -rf python<br>ln -s /usr/local/Python-x.x.x/bin/python ./python</p></blockquote>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1.下载python压缩包(这里这的是python2.7版本)&lt;/p&gt;
+      &lt;p&gt;1.下载python压缩包(这里这的是python2.7版本)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;wget   &lt;a href=&quot;https://www.python.org/ft
-      
+&lt;p&gt;wget   &lt;a href=&quot;https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.python.org/ftp/pthon/2.7.11/Python-2.7.11.tgz&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
