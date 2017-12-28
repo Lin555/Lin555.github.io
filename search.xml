@@ -230,7 +230,7 @@ MySQL版本：mariadb-5.5.35
         
         <tags>
             
-            <tag> Mysql主从复制 </tag>
+            <tag> Mysql </tag>
             
         </tags>
         
@@ -333,7 +333,7 @@ MySQL版本：mariadb-5.5.35
         
         <tags>
             
-            <tag> MySql主主复制 </tag>
+            <tag> Mysql </tag>
             
         </tags>
         
