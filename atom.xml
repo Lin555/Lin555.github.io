@@ -5,9 +5,9 @@
   <subtitle>不忘初心 方得终始</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://www.lhb520.cn/"/>
   <updated>2017-12-28T03:30:40.705Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://www.lhb520.cn/</id>
   
   <author>
     <name>Lin_haobin</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Linux--apache日志分割脚本</title>
-    <link href="http://yoursite.com/2017/12/28/Linux-apache%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E8%84%9A%E6%9C%AC/"/>
-    <id>http://yoursite.com/2017/12/28/Linux-apache日志分割脚本/</id>
+    <link href="http://www.lhb520.cn/2017/12/28/Linux-apache%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E8%84%9A%E6%9C%AC/"/>
+    <id>http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/</id>
     <published>2017-12-28T03:23:59.000Z</published>
     <updated>2017-12-28T03:30:40.705Z</updated>
     
@@ -41,14 +41,14 @@
     </summary>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://www.lhb520.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux搭建postfix邮件服务器</title>
-    <link href="http://yoursite.com/2017/12/28/Linux%E6%90%AD%E5%BB%BApostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>http://yoursite.com/2017/12/28/Linux搭建postfix邮件服务器/</id>
+    <link href="http://www.lhb520.cn/2017/12/28/Linux%E6%90%AD%E5%BB%BApostfix%E9%82%AE%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://www.lhb520.cn/2017/12/28/Linux搭建postfix邮件服务器/</id>
     <published>2017-12-28T03:14:42.000Z</published>
     <updated>2017-12-28T03:22:50.344Z</updated>
     
@@ -67,14 +67,14 @@
     </summary>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://www.lhb520.cn/tags/linux/"/>
     
   </entry>
   
   <entry>
     <title>MySQL主从复制原理及搭建</title>
-    <link href="http://yoursite.com/2017/12/28/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%8E%9F%E7%90%86%E5%8F%8A%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2017/12/28/MySQL主从复制原理及搭建/</id>
+    <link href="http://www.lhb520.cn/2017/12/28/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E5%8E%9F%E7%90%86%E5%8F%8A%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.lhb520.cn/2017/12/28/MySQL主从复制原理及搭建/</id>
     <published>2017-12-28T03:09:59.000Z</published>
     <updated>2017-12-28T03:36:35.995Z</updated>
     
@@ -89,14 +89,14 @@
     </summary>
     
     
-      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://www.lhb520.cn/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>MySQL主主复制原理及搭建</title>
-    <link href="http://yoursite.com/2017/12/28/MySQL%E4%B8%BB%E4%B8%BB%E5%A4%8D%E5%88%B6%E5%8E%9F%E7%90%86%E5%8F%8A%E6%90%AD%E5%BB%BA/"/>
-    <id>http://yoursite.com/2017/12/28/MySQL主主复制原理及搭建/</id>
+    <link href="http://www.lhb520.cn/2017/12/28/MySQL%E4%B8%BB%E4%B8%BB%E5%A4%8D%E5%88%B6%E5%8E%9F%E7%90%86%E5%8F%8A%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.lhb520.cn/2017/12/28/MySQL主主复制原理及搭建/</id>
     <published>2017-12-28T02:50:29.000Z</published>
     <updated>2017-12-28T03:36:19.319Z</updated>
     
@@ -113,14 +113,14 @@
     </summary>
     
     
-      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://www.lhb520.cn/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>解决Vwmare14出现黑屏问题</title>
-    <link href="http://yoursite.com/2017/12/24/%E8%A7%A3%E5%86%B3Vwmare14%E5%87%BA%E7%8E%B0%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2017/12/24/解决Vwmare14出现黑屏问题/</id>
+    <link href="http://www.lhb520.cn/2017/12/24/%E8%A7%A3%E5%86%B3Vwmare14%E5%87%BA%E7%8E%B0%E9%BB%91%E5%B1%8F%E9%97%AE%E9%A2%98/"/>
+    <id>http://www.lhb520.cn/2017/12/24/解决Vwmare14出现黑屏问题/</id>
     <published>2017-12-24T12:22:29.000Z</published>
     <updated>2017-12-28T02:46:45.955Z</updated>
     
@@ -134,14 +134,14 @@
     </summary>
     
     
-      <category term="Vwmare" scheme="http://yoursite.com/tags/Vwmare/"/>
+      <category term="Vwmare" scheme="http://www.lhb520.cn/tags/Vwmare/"/>
     
   </entry>
   
   <entry>
     <title>Linux下安装Python</title>
-    <link href="http://yoursite.com/2017/12/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Python/"/>
-    <id>http://yoursite.com/2017/12/24/Linux下安装Python/</id>
+    <link href="http://www.lhb520.cn/2017/12/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85Python/"/>
+    <id>http://www.lhb520.cn/2017/12/24/Linux下安装Python/</id>
     <published>2017-12-24T12:17:58.000Z</published>
     <updated>2017-12-28T02:30:30.330Z</updated>
     
@@ -157,14 +157,14 @@
     </summary>
     
     
-      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+      <category term="Python" scheme="http://www.lhb520.cn/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>linux下MySql命令</title>
-    <link href="http://yoursite.com/2017/12/24/linux%E4%B8%8BMySql%E5%91%BD%E4%BB%A4/"/>
-    <id>http://yoursite.com/2017/12/24/linux下MySql命令/</id>
+    <link href="http://www.lhb520.cn/2017/12/24/linux%E4%B8%8BMySql%E5%91%BD%E4%BB%A4/"/>
+    <id>http://www.lhb520.cn/2017/12/24/linux下MySql命令/</id>
     <published>2017-12-24T12:10:01.000Z</published>
     <updated>2017-12-28T02:47:19.653Z</updated>
     
@@ -183,14 +183,14 @@
     </summary>
     
     
-      <category term="Mysql" scheme="http://yoursite.com/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://www.lhb520.cn/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>Redhat快速安装LAMP和WordPress</title>
-    <link href="http://yoursite.com/2017/12/24/Redhat%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85LAMP%E5%92%8CWordPress/"/>
-    <id>http://yoursite.com/2017/12/24/Redhat快速安装LAMP和WordPress/</id>
+    <link href="http://www.lhb520.cn/2017/12/24/Redhat%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85LAMP%E5%92%8CWordPress/"/>
+    <id>http://www.lhb520.cn/2017/12/24/Redhat快速安装LAMP和WordPress/</id>
     <published>2017-12-24T11:59:55.000Z</published>
     <updated>2017-12-28T02:48:27.838Z</updated>
     
@@ -205,14 +205,14 @@
     </summary>
     
     
-      <category term="redhat" scheme="http://yoursite.com/tags/redhat/"/>
+      <category term="redhat" scheme="http://www.lhb520.cn/tags/redhat/"/>
     
   </entry>
   
   <entry>
     <title>搭建Apache虚拟目录</title>
-    <link href="http://yoursite.com/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/"/>
-    <id>http://yoursite.com/2017/12/24/搭建Apache虚拟目录/</id>
+    <link href="http://www.lhb520.cn/2017/12/24/%E6%90%AD%E5%BB%BAApache%E8%99%9A%E6%8B%9F%E7%9B%AE%E5%BD%95/"/>
+    <id>http://www.lhb520.cn/2017/12/24/搭建Apache虚拟目录/</id>
     <published>2017-12-24T11:41:40.000Z</published>
     <updated>2017-12-28T02:49:17.229Z</updated>
     
@@ -228,7 +228,7 @@
     </summary>
     
     
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
+      <category term="linux" scheme="http://www.lhb520.cn/tags/linux/"/>
     
   </entry>
   
