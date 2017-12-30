@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title>Linux--apache日志分割脚本</title>
+    <title>shell--apache日志分割脚本</title>
     <link href="http://www.lhb520.cn/2017/12/28/Linux-apache%E6%97%A5%E5%BF%97%E5%88%86%E5%89%B2%E8%84%9A%E6%9C%AC/"/>
     <id>http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/</id>
     <published>2017-12-28T03:23:59.000Z</published>
-    <updated>2017-12-30T02:40:13.992Z</updated>
+    <updated>2017-12-30T02:47:34.614Z</updated>
     
     <content type="html"><![CDATA[<p>#!/bin/bash</p><p>#这里是以一天为单位的日志分割</p><p>#记录下当天的日期</p><blockquote><p>date=date -d yesterday +% Y%m%d<br><a id="more"></a></p><p>#切换到apache的日志文件</p><p>#在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录<br>old=/usr/local/apache2/logs/access_log</p><p>#分割后的存放目录，一般情况下，为了美观，分割后的日志不会存放在跟原本的目录下。<br>mkdir -p /usr/local/apache2/logsback<br>old=/usr/local/apache/logsback/access_($date).log</p><p>#把日志分割<br>mv $old $new</p><p>#把apache挂起（目的是为了重新生成新的access_log日志文件）<br>pkill -l httpd<br>＃脚本写完后，那么我们就需要结合crontab －e命令每天凌晨12点执行该脚本</p></blockquote>]]></content>
     
@@ -61,7 +61,7 @@
     </summary>
     
     
-      <category term="linux" scheme="http://www.lhb520.cn/tags/linux/"/>
+      <category term="shell" scheme="http://www.lhb520.cn/tags/shell/"/>
     
   </entry>
   
