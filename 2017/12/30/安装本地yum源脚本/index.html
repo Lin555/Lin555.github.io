@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="一、原理  MySQL两台服务器上面的任何一个数据库发生改变，都会同步到另一台服务器上面去。  二、环境搭建">
-<meta name="keywords" content="Mysql">
+<meta name="description" content="rpm -qa|grep yum   //检查是否安装了yum.  如果没有安装就执行下面的文件 创建一个以xxx.sh结尾的文件 ＃!/bin/bash ＃1.创建两个文件用于挂载文件  mkdir /mnt/yum   mkdir  /dev/local  ＃2.挂载系统安装光盘  mount /dev/cdrom /mnt/yum  ＃3.切换到源配置文件的目录下  cd /etc/yum">
+<meta name="keywords" content="shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL主主复制原理及搭建">
-<meta property="og:url" content="http://www.lhb520.cn/2017/12/28/MySQL主主复制原理及搭建/index.html">
+<meta property="og:title" content="安装本地yum源脚本">
+<meta property="og:url" content="http://www.lhb520.cn/2017/12/30/安装本地yum源脚本/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="一、原理  MySQL两台服务器上面的任何一个数据库发生改变，都会同步到另一台服务器上面去。  二、环境搭建">
+<meta property="og:description" content="rpm -qa|grep yum   //检查是否安装了yum.  如果没有安装就执行下面的文件 创建一个以xxx.sh结尾的文件 ＃!/bin/bash ＃1.创建两个文件用于挂载文件  mkdir /mnt/yum   mkdir  /dev/local  ＃2.挂载系统安装光盘  mount /dev/cdrom /mnt/yum  ＃3.切换到源配置文件的目录下  cd /etc/yum">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T03:36:19.319Z">
+<meta property="og:updated_time" content="2017-12-30T09:04:17.790Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL主主复制原理及搭建">
-<meta name="twitter:description" content="一、原理  MySQL两台服务器上面的任何一个数据库发生改变，都会同步到另一台服务器上面去。  二、环境搭建">
+<meta name="twitter:title" content="安装本地yum源脚本">
+<meta name="twitter:description" content="rpm -qa|grep yum   //检查是否安装了yum.  如果没有安装就执行下面的文件 创建一个以xxx.sh结尾的文件 ＃!/bin/bash ＃1.创建两个文件用于挂载文件  mkdir /mnt/yum   mkdir  /dev/local  ＃2.挂载系统安装光盘  mount /dev/cdrom /mnt/yum  ＃3.切换到源配置文件的目录下  cd /etc/yum">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>MySQL主主复制原理及搭建 | Lin_haobin&#39;s Blog</title>
+<title>安装本地yum源脚本 | Lin_haobin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-MySQL主主复制原理及搭建" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-安装本地yum源脚本" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/28/MySQL主主复制原理及搭建/" class="article-date">
-      <time datetime="2017-12-28T02:50:29.000Z" itemprop="datePublished">2017-12-28</time>
+      <a href="/2017/12/30/安装本地yum源脚本/" class="article-date">
+      <time datetime="2017-12-30T09:00:23.000Z" itemprop="datePublished">2017-12-30</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MySQL主主复制原理及搭建
+      安装本地yum源脚本
     </h1>
   
 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,95 +315,53 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>一、原理</p>
-<blockquote>
-<p>MySQL两台服务器上面的任何一个数据库发生改变，都会同步到另一台服务器上面去。</p>
+        <blockquote>
+<p>rpm -qa|grep yum   //检查是否安装了yum.</p>
 </blockquote>
-<p>二、环境搭建</p>
-<a id="more"></a>
+<p>如果没有安装就执行下面的文件</p>
+<p>创建一个以xxx.sh结尾的文件</p>
+<p>＃!/bin/bash</p>
+<p>＃1.创建两个文件用于挂载文件</p>
 <blockquote>
-<p>主数据库1(master1)：172.25.0.254<br>主数据库2(master2)：172.25.0.11<br>操作系统：RHRL7<br>MySQL版本：mariadb-5.5.35</p>
+<p>mkdir /mnt/yum  </p>
+<p>mkdir  /dev/local</p>
 </blockquote>
-<p>安装MYSQL(yum源安装)</p>
-<p>master1</p>
+<p>＃2.挂载系统安装光盘</p>
 <blockquote>
-<p>[root@master1 ~]# yum clean all<br>[root@master1 ~]# yum -y install mariadb*</p>
+<p>mount /dev/cdrom /mnt/yum</p>
 </blockquote>
-<p>master2</p>
+<p>＃3.切换到源配置文件的目录下</p>
 <blockquote>
-<p>[root@master2 ~]# yum clean all<br>[root@master2 ~]# yum -y install mariadb*</p>
+<p>cd /etc/yum.repos.d</p>
+<p>rm -rf *</p>
 </blockquote>
-<p>开启mariadb服务</p>
+<p>＃4.创建一个新的文件，记住必须以.repo结尾的文件</p>
 <blockquote>
-<p>[root@master1 ~]# systemctl start mariadb<br>[root@master2 ~]# systemctl start mariadb</p>
+<p>touch local.repo</p>
 </blockquote>
-<p>关闭防火墙（或者开发防火墙的mysql服务和3306端口）</p>
+<p>＃5.编辑xxx.repo文件，basefile指定的路径必须是挂载的目录</p>
 <blockquote>
-<p>[root@master1 ~]# systemctl stop firewalld.service<br>[root@master2 ~]# systemctl stop firewalld.service</p>
+<p>echo -e “[base]\nbaseurl=file:///mnt/yum\ngpgcheck=0\nenabled=1\n” &gt;<br> local.repo</p>
 </blockquote>
-<p>三.配置方法</p>
-<p>master1<br>修改主库my.cnf主要设置个不一样的ID，以及同步的数据库的名字和端口号</p>
+<p>＃6.把它复制到系统上</p>
 <blockquote>
-<p>[root@master1 ~]# vim /etc/my.cnf<br>server-id=1<br>log-bin=lhb<br>port=3306</p>
+<p>cp /mnt/yum/*  /dev/local/</p>
 </blockquote>
-<p>重启服务使配置生效</p>
+<p>＃7.清除所有的缓存</p>
 <blockquote>
-<p>[root@master1 ~]# systemctl restart mariadb</p>
+<p>yum clean all</p>
 </blockquote>
-<p>登录主库赋予从库权限账号，允许用户在主库上读取日志(用户名：admin，密码：123456）</p>
+<p>＃8.列出rpm包</p>
 <blockquote>
-<p>[root@master1 ~]# mysql -uroot -p123456<br>MariaDB [(none)]&gt; grant replication slave on <em>.</em> to ‘admin’@’172.25.0.11’ identified by ‘123456’;</p>
+<p>yum list</p>
 </blockquote>
-<p>我们可以在master2的主机上用命令作如下去验证下是否可以进入master1的MySQL</p>
+<p>保存文件并退出</p>
+<p>执行该脚本 sh xxx.sh 或chmod  +x  xxx.sh</p>
+<p>如果在负责的时候提示你系统空间不足的话，那么我们就直接使用开机自动挂载就可以不用负责到系统上了。</p>
 <blockquote>
-<p>[root@master2 ~]# mysql -uadmin -p’123456’ -h 172.25.0.254</p>
+<p>vim /etc/fstab  //去这个文档下面编辑下面这句话</p>
+<p>/dev/cdrom /mnt/yum<br>iso9660 defaults,ro 0 0</p>
 </blockquote>
-<p>显示主数据看的信息</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; show master status;<br>    +————+———-+————–+——————+<br>    | File       | Position | Binlog_Do_DB | Binlog_Ignore_DB |<br>    +————+———-+————–+——————+<br>    | lhb.000002 |      245 |              |                  |<br>    +————+———-+————–+——————+<br>    1 row in set (0.00 sec)</p>
-</blockquote>
-<p>设置同步</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; slave stop;<br>    Query OK, 0 rows affected, 1 warning (0.00 sec)<br>MariaDB [(none)]&gt; change master to master_host=’172.25.0.11’,master_user=’admin’,master_password=’123456’,master_log_file=’lhb.000002’,master_log_pos=245;<br>    Query OK, 0 rows affected (0.03 sec)<br>master2</p>
-</blockquote>
-<p>修改主库my.cnf主要设置个不一样的ID，以及同步的数据库的名字和端口号</p>
-<blockquote>
-<p>[root@master2 ~]# vim /etc/my.cnf<br>server-id=2<br>log-bin=lhb<br>port=3306</p>
-</blockquote>
-<p>重启服务使配置生效</p>
-<blockquote>
-<p>[root@master2 ~]# systemctl restart mariadb</p>
-</blockquote>
-<p>登录主库赋予从库权限账号，允许用户在主库上读取日志(用户名：admin，密码：123456）</p>
-<blockquote>
-<p>[root@master2 ~]# mysql -uroot -p123456<br>MariaDB [(none)]&gt; grant replication slave on <em>.</em> to ‘admin’@’172.25.0.254’ identified by ‘123456’;</p>
-</blockquote>
-<p>我们可以在master1的主机上用命令作如下去验证下是否可以进入master1的MySQL</p>
-<blockquote>
-<p>[root@master1 ~]# mysql -uadmin -p’123456’ -h 172.25.0.11</p>
-</blockquote>
-<p>显示主数据看的信息</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; show master status;<br>    +————+———-+————–+——————+<br>    | File       | Position | Binlog_Do_DB | Binlog_Ignore_DB |<br>    +————+———-+————–+——————+<br>    | lhb.000002 |      245 |              |                  |<br>    +————+———-+————–+——————+<br>    1 row in set (0.00 sec)</p>
-</blockquote>
-<p>设置同步</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; slave stop；<br>    MariaDB [(none)]&gt; change master to master_host=’172.25.0.254’,master_user=’admin’,master_password=’123456’,master_log_file=’lhb.000002’,master_log_pos=245;<br>在master1 和master2 两个主机同时敲下<br>MariaDB [(none)]&gt; slave start；</p>
-</blockquote>
-<p>查看是否成功</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; show slave status\G;<br>Slave_IO_Running: Yes<br>Slave_SQL_Running: Yes<br>两个为Yes表示成功（两台主机都需要查看）</p>
-</blockquote>
-<p>测试：在master1建立lhbdb的数据库，看看在master2是否会同步</p>
-<p>master1</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; create database lhbdb;<br>    Query OK, 1 row affected (0.00 sec)<br>    MariaDB [(none)]&gt; show databases;<br>    +——————–+<br>    | Database           |<br>    +——————–+<br>    | information_schema |<br>    | lhbdb              |<br>    | mysql              |<br>    | performance_schema |<br>    | test               |<br>    +——————–+<br>    5 rows in set (0.01 sec)</p>
-</blockquote>
-<p>master2</p>
-<blockquote>
-<p>MariaDB [(none)]&gt; show databases;<br>    +——————–+<br>    | Database           |<br>    +——————–+<br>    | information_schema |<br>    | lhbdb              |<br>    | mysql              |<br>    | performance_schema |<br>    | test               |<br>    +——————–+<br>    5 rows in set (0.01 sec)</p>
-</blockquote>
-<p>由此可以看到master2 能够到看lhbdb的数据库，表示MySQL主主搭建成功^<em>^^</em>^^_^!!!</p>
 
       
     </div>
@@ -412,13 +370,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/28/MySQL主主复制原理及搭建/">MySQL主主复制原理及搭建</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/30/安装本地yum源脚本/">安装本地yum源脚本</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
-        <p><span>发布时间:</span>2017-12-28, 10:50:29</p>
-        <p><span>最后更新:</span>2017-12-28, 11:36:19</p>
+        <p><span>发布时间:</span>2017-12-30, 17:00:23</p>
+        <p><span>最后更新:</span>2017-12-30, 17:04:17</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/28/MySQL主主复制原理及搭建/" title="MySQL主主复制原理及搭建">http://www.lhb520.cn/2017/12/28/MySQL主主复制原理及搭建/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/28/MySQL主主复制原理及搭建/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/30/安装本地yum源脚本/" title="安装本地yum源脚本">http://www.lhb520.cn/2017/12/30/安装本地yum源脚本/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/30/安装本地yum源脚本/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -430,16 +388,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/28/MySQL主从复制原理及搭建/">
-                    MySQL主从复制原理及搭建
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/24/解决Vwmare14出现黑屏问题/">
-                    解决Vwmare14出现黑屏问题
+                <a href="/2017/12/30/linux-安装NFS服务器/">
+                    linux--安装NFS服务器
                 </a>
             </div>
         
@@ -487,7 +439,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"MySQL主主复制原理及搭建　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"安装本地yum源脚本　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -507,15 +459,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/28/MySQL主从复制原理及搭建/" title="上一篇: MySQL主从复制原理及搭建">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/24/解决Vwmare14出现黑屏问题/" title="下一篇: 解决Vwmare14出现黑屏问题">
+            <a href="/2017/12/30/linux-安装NFS服务器/" title="下一篇: linux--安装NFS服务器">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.lhb520.cn/"/>
-  <updated>2017-12-30T04:53:59.047Z</updated>
+  <updated>2017-12-30T09:04:17.790Z</updated>
   <id>http://www.lhb520.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装本地yum源脚本</title>
+    <link href="http://www.lhb520.cn/2017/12/30/%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E8%84%9A%E6%9C%AC/"/>
+    <id>http://www.lhb520.cn/2017/12/30/安装本地yum源脚本/</id>
+    <published>2017-12-30T09:00:23.000Z</published>
+    <updated>2017-12-30T09:04:17.790Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>rpm -qa|grep yum   //检查是否安装了yum.</p></blockquote><p>如果没有安装就执行下面的文件</p><p>创建一个以xxx.sh结尾的文件</p><p>＃!/bin/bash</p><p>＃1.创建两个文件用于挂载文件</p><blockquote><p>mkdir /mnt/yum  </p><p>mkdir  /dev/local</p></blockquote><p>＃2.挂载系统安装光盘</p><blockquote><p>mount /dev/cdrom /mnt/yum</p></blockquote><p>＃3.切换到源配置文件的目录下</p><blockquote><p>cd /etc/yum.repos.d</p><p>rm -rf *</p></blockquote><p>＃4.创建一个新的文件，记住必须以.repo结尾的文件</p><blockquote><p>touch local.repo</p></blockquote><p>＃5.编辑xxx.repo文件，basefile指定的路径必须是挂载的目录</p><blockquote><p>echo -e “[base]\nbaseurl=file:///mnt/yum\ngpgcheck=0\nenabled=1\n” &gt;<br> local.repo</p></blockquote><p>＃6.把它复制到系统上</p><blockquote><p>cp /mnt/yum/*  /dev/local/</p></blockquote><p>＃7.清除所有的缓存</p><blockquote><p>yum clean all</p></blockquote><p>＃8.列出rpm包</p><blockquote><p>yum list</p></blockquote><p>保存文件并退出</p><p>执行该脚本 sh xxx.sh 或chmod  +x  xxx.sh</p><p>如果在负责的时候提示你系统空间不足的话，那么我们就直接使用开机自动挂载就可以不用负责到系统上了。</p><blockquote><p>vim /etc/fstab  //去这个文档下面编辑下面这句话</p><p>/dev/cdrom /mnt/yum<br>iso9660 defaults,ro 0 0</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;rpm -qa|grep yum   //检查是否安装了yum.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果没有安装就执行下面的文件&lt;/p&gt;
+&lt;p&gt;创建一个以xxx.sh结尾的文件&lt;/p&gt;
+&lt;p&gt;＃!/bin/bash&lt;/p&gt;
+&lt;p&gt;＃1.创建
+      
+    
+    </summary>
+    
+    
+      <category term="shell" scheme="http://www.lhb520.cn/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>linux--安装NFS服务器</title>
@@ -114,7 +143,7 @@
     <published>2017-12-28T03:14:42.000Z</published>
     <updated>2017-12-28T03:22:50.344Z</updated>
     
-    <content type="html"><![CDATA[<p>1.修改主机名和部署DNS服务器</p><blockquote><p>[root@mail ~]# hostname<br>mail.disanzu.com</p></blockquote><p>部署DNF服务器可以参考我的另一篇安装DNS服务器的博客</p><blockquote><p><a href="http://blog.csdn.net/lin_haobin/article/details/73252815" target="_blank" rel="noopener">http://blog.csdn.net/lin_haobin/article/details/73252815</a><br><a id="more"></a><br>2.安装postfix服务器<br>[root@mail ~]# yum -y install postfix</p></blockquote><p>3.修改postfix配置文件</p><blockquote><p>[root@mail ~]# vim  /etc/postfix/main.cf    </p></blockquote><p>修改以下内容</p><blockquote><p>myhostname = 你的邮件域名</p></blockquote><p>设置服务器主机名</p><blockquote><p>mydomain = 你的域名  </p></blockquote><p>设置服务器的域名</p><blockquote><p>myorigin = $mydomain</p></blockquote><p>定义寄出邮件的域</p><blockquote><p>inet_interfaces = all</p></blockquote><p>指定要由服务器的哪些地址对外提供电子邮件服务</p><blockquote><p>mydestination = $myhostname, $mydomain<br>修改完后保存退出</p></blockquote><p>重启下postfix服务器</p><blockquote><p>systemctl restart postfix.service</p></blockquote><p>4.安装dovecot服务程序</p><blockquote><p>[root@mail ~]# yum -y install dovecot</p></blockquote><p>5.修改dovecot主配置文件</p><blockquote><p>[root@mail ~]# vim /etc/dovecot/dovecot.conf </p></blockquote><p>更改以下几点<br>设置支持的电子邮件协议</p><blockquote><p>protocols = imap pop3 lmtp</p></blockquote><p>允许用户明文登录（这一条需要自己手动添加）</p><blockquote><p>disable_plaintext_auth = no</p></blockquote><p>这里的IP为网络为即192.168.10.0/24</p><blockquote><p>login_trusted_networks = 服务器ip/24</p></blockquote><p>6.修改dovecot子配置文件<br>定义接受到邮件保存到服务器的哪个目录下</p><blockquote><p>[root@mail ~]# vim /etc/dovecot/conf.d/10-mail.conf<br>mail_location = mbox:~/mail:INBOX=/var/mail/%u</p></blockquote><p>更改完后重启下程序</p><blockquote><p>systemctl restart dovecot</p></blockquote><p>7.创建邮件用户，并创建存放目录</p><blockquote><p>[root@mail ~]# useradd text<br>[root@mail ~]#su - text<br>[text@mail ~]$ mkdir -p mail/.imap/INBOX/<br>[text@mail ~]$ su - root</p></blockquote><p>8.发送邮件<br>发送邮件   “mail”是这封邮件的名称</p><blockquote><p>[root@mail ~]# echo “this is a mail “ |mail -s “mail”  text@disanzu.com</p></blockquote><p>9.验证邮件</p><blockquote><p>[root@mail ~]# su - text<br>[text@mail ~]$ mail<br>Heirloom Mail version 12.4 7/29/08.  Type ? for help.<br>“/var/spool/mail/text”: 6 messages 6 new<br>N  1 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  2 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  3 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  4 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  5 root                  Thu Jun 15 16:44  22/799   “text mail”<br> N  6 root                  Thu Jun 15 16:57  22/790   “mail”<br>&amp; 6<br>Message  6:<br>From root@mail.disanzu.com  Thu Jun 15 16:57:48 2017<br>Return-Path: <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x72;&#x6f;&#x6f;&#116;&#64;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x64;&#x69;&#x73;&#x61;&#x6e;&#122;&#117;&#46;&#x63;&#x6f;&#x6d;">&#x72;&#x6f;&#x6f;&#116;&#64;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x64;&#x69;&#x73;&#x61;&#x6e;&#122;&#117;&#46;&#x63;&#x6f;&#x6d;</a><br>X-Original-To: text@disanzu.com<br>Delivered-To: text@disanzu.com<br>From: root <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#114;&#111;&#x6f;&#x74;&#x40;&#x6d;&#97;&#105;&#x6c;&#46;&#100;&#x69;&#x73;&#97;&#x6e;&#x7a;&#x75;&#46;&#x63;&#111;&#109;">&#114;&#111;&#x6f;&#x74;&#x40;&#x6d;&#97;&#105;&#x6c;&#46;&#100;&#x69;&#x73;&#97;&#x6e;&#x7a;&#x75;&#46;&#x63;&#111;&#109;</a><br>Date: Thu, 15 Jun 2017 16:57:48 -0400<br>To: text@disanzu.com<br>Subject: mail<br>User-Agent: Heirloom mailx 12.4 7/29/08<br>Content-Type: text/plain; charset=us-ascii<br>Status: R</p><p>this is a mail </p><p>&amp; </p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>1.修改主机名和部署DNS服务器</p><blockquote><p>[root@mail ~]# hostname<br>mail.disanzu.com</p></blockquote><p>部署DNF服务器可以参考我的另一篇安装DNS服务器的博客</p><blockquote><p><a href="http://blog.csdn.net/lin_haobin/article/details/73252815" target="_blank" rel="noopener">http://blog.csdn.net/lin_haobin/article/details/73252815</a><br><a id="more"></a><br>2.安装postfix服务器<br>[root@mail ~]# yum -y install postfix</p></blockquote><p>3.修改postfix配置文件</p><blockquote><p>[root@mail ~]# vim  /etc/postfix/main.cf    </p></blockquote><p>修改以下内容</p><blockquote><p>myhostname = 你的邮件域名</p></blockquote><p>设置服务器主机名</p><blockquote><p>mydomain = 你的域名  </p></blockquote><p>设置服务器的域名</p><blockquote><p>myorigin = $mydomain</p></blockquote><p>定义寄出邮件的域</p><blockquote><p>inet_interfaces = all</p></blockquote><p>指定要由服务器的哪些地址对外提供电子邮件服务</p><blockquote><p>mydestination = $myhostname, $mydomain<br>修改完后保存退出</p></blockquote><p>重启下postfix服务器</p><blockquote><p>systemctl restart postfix.service</p></blockquote><p>4.安装dovecot服务程序</p><blockquote><p>[root@mail ~]# yum -y install dovecot</p></blockquote><p>5.修改dovecot主配置文件</p><blockquote><p>[root@mail ~]# vim /etc/dovecot/dovecot.conf </p></blockquote><p>更改以下几点<br>设置支持的电子邮件协议</p><blockquote><p>protocols = imap pop3 lmtp</p></blockquote><p>允许用户明文登录（这一条需要自己手动添加）</p><blockquote><p>disable_plaintext_auth = no</p></blockquote><p>这里的IP为网络为即192.168.10.0/24</p><blockquote><p>login_trusted_networks = 服务器ip/24</p></blockquote><p>6.修改dovecot子配置文件<br>定义接受到邮件保存到服务器的哪个目录下</p><blockquote><p>[root@mail ~]# vim /etc/dovecot/conf.d/10-mail.conf<br>mail_location = mbox:~/mail:INBOX=/var/mail/%u</p></blockquote><p>更改完后重启下程序</p><blockquote><p>systemctl restart dovecot</p></blockquote><p>7.创建邮件用户，并创建存放目录</p><blockquote><p>[root@mail ~]# useradd text<br>[root@mail ~]#su - text<br>[text@mail ~]$ mkdir -p mail/.imap/INBOX/<br>[text@mail ~]$ su - root</p></blockquote><p>8.发送邮件<br>发送邮件   “mail”是这封邮件的名称</p><blockquote><p>[root@mail ~]# echo “this is a mail “ |mail -s “mail”  text@disanzu.com</p></blockquote><p>9.验证邮件</p><blockquote><p>[root@mail ~]# su - text<br>[text@mail ~]$ mail<br>Heirloom Mail version 12.4 7/29/08.  Type ? for help.<br>“/var/spool/mail/text”: 6 messages 6 new<br>N  1 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  2 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  3 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  4 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  5 root                  Thu Jun 15 16:44  22/799   “text mail”<br> N  6 root                  Thu Jun 15 16:57  22/790   “mail”<br>&amp; 6<br>Message  6:<br>From root@mail.disanzu.com  Thu Jun 15 16:57:48 2017<br>Return-Path: <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x64;&#105;&#115;&#x61;&#x6e;&#122;&#117;&#x2e;&#99;&#111;&#109;">&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x64;&#105;&#115;&#x61;&#x6e;&#122;&#117;&#x2e;&#99;&#111;&#109;</a><br>X-Original-To: text@disanzu.com<br>Delivered-To: text@disanzu.com<br>From: root <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x72;&#x6f;&#111;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#x2e;&#100;&#105;&#115;&#97;&#x6e;&#122;&#x75;&#46;&#99;&#111;&#109;">&#x72;&#x6f;&#111;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#x2e;&#100;&#105;&#115;&#97;&#x6e;&#122;&#x75;&#46;&#99;&#111;&#109;</a><br>Date: Thu, 15 Jun 2017 16:57:48 -0400<br>To: text@disanzu.com<br>Subject: mail<br>User-Agent: Heirloom mailx 12.4 7/29/08<br>Content-Type: text/plain; charset=us-ascii<br>Status: R</p><p>this is a mail </p><p>&amp; </p></blockquote>]]></content>
     
     <summary type="html">
     
