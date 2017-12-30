@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
+<meta name="description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LVS--DR实现负载均衡">
 <meta property="og:url" content="http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
+<meta property="og:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-30T11:34:27.492Z">
+<meta property="og:updated_time" content="2017-12-30T11:37:37.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LVS--DR实现负载均衡">
-<meta name="twitter:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
+<meta name="twitter:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -320,7 +320,7 @@
 <p>两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）<br>    ipvsadm-1.24-8.1.i386.rpm</p>
 </blockquote>
 <p>###实验过程：</p>
-<p>####Load Balancer服务器<br>配置ip地址</p>
+<p>####Load Balancer服务器<br><a id="more"></a><br>配置ip地址</p>
 <blockquote>
 <p>[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno33554960<br>                IPADDR=172.25.0.10<br>                NETMASK=255.255.255.0<br>                GATEWAY=0.0.0.0</p>
 </blockquote>
@@ -423,7 +423,7 @@ echo &quot;2&quot; &gt; /proc/sys/net/ipv4/conf/all/arp_announce
         <p><span>本文标题:</span><a href="/2017/12/30/LVS-DR实现负载均衡/">LVS--DR实现负载均衡</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
         <p><span>发布时间:</span>2017-12-30, 19:32:42</p>
-        <p><span>最后更新:</span>2017-12-30, 19:34:27</p>
+        <p><span>最后更新:</span>2017-12-30, 19:37:37</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/12/30/LVS-DR实现负载均衡/" title="LVS--DR实现负载均衡">http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

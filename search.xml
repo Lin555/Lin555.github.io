@@ -10,7 +10,7 @@
 <p>两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）<br>    ipvsadm-1.24-8.1.i386.rpm</p>
 </blockquote>
 <p>###实验过程：</p>
-<p>####Load Balancer服务器<br>配置ip地址</p>
+<p>####Load Balancer服务器<br><a id="more"></a><br>配置ip地址</p>
 <blockquote>
 <p>[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno33554960<br>                IPADDR=172.25.0.10<br>                NETMASK=255.255.255.0<br>                GATEWAY=0.0.0.0</p>
 </blockquote>
