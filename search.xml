@@ -3,6 +3,45 @@
   
     
     <entry>
+      <title><![CDATA[Windows安装pip]]></title>
+      <url>/2017/12/30/Windows%E5%AE%89%E8%A3%85pip/</url>
+      <content type="html"><![CDATA[<p>一、windows 中pip的配置文件是%HOME%/pip/pip.ini(%HOME%为当前用户)<br>如果Windows的当前用户是King的话，那么配置文件的位置就是</p>
+<blockquote>
+<p>C：\Users\King\pip\pip.ini</p>
+</blockquote>
+<p>默认情况下pip文件夹和pip.ini文件都没有创建，需要自行创建。<br><a id="more"></a><br>二、修改pip.ini文件</p>
+<blockquote>
+<p>[global]<br>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+</blockquote>
+<p>三、在Windows下的cmd模式输入以下</p>
+<blockquote>
+<p>python<br>-m pip<br>install -upgrade<br>pip </p>
+</blockquote>
+<p>四、测试pip</p>
+<blockquote>
+<p>pip -v    或<br>pip -h</p>
+</blockquote>
+<p>如果提示pip不是内部命令，那么我们需要修改环境变量</p>
+<p>点击我的电脑–高级–环境变量</p>
+<blockquote>
+<p>找到path，修改路径加入C:\Pthon27\Scripts</p>
+</blockquote>
+<p>重启下cmd，然后输入pip </p>
+<blockquote>
+<p>-v    或<br>pip<br>-h</p>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Window </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[安装本地yum源脚本]]></title>
       <url>/2017/12/30/%E5%AE%89%E8%A3%85%E6%9C%AC%E5%9C%B0yum%E6%BA%90%E8%84%9A%E6%9C%AC/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -11,7 +50,7 @@
 <p>如果没有安装就执行下面的文件</p>
 <p>创建一个以xxx.sh结尾的文件</p>
 <p>＃!/bin/bash</p>
-<p>＃1.创建两个文件用于挂载文件</p>
+<p>＃1.创建两个文件用于挂载文件<br><a id="more"></a></p>
 <blockquote>
 <p>mkdir /mnt/yum  </p>
 <p>mkdir  /dev/local</p>
@@ -352,7 +391,7 @@
 </blockquote>
 <p>9.验证邮件</p>
 <blockquote>
-<p>[root@mail ~]# su - text<br>[text@mail ~]$ mail<br>Heirloom Mail version 12.4 7/29/08.  Type ? for help.<br>“/var/spool/mail/text”: 6 messages 6 new<br>N  1 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  2 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  3 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  4 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  5 root                  Thu Jun 15 16:44  22/799   “text mail”<br> N  6 root                  Thu Jun 15 16:57  22/790   “mail”<br>&amp; 6<br>Message  6:<br>From root@mail.disanzu.com  Thu Jun 15 16:57:48 2017<br>Return-Path: <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x64;&#105;&#115;&#x61;&#x6e;&#122;&#117;&#x2e;&#99;&#111;&#109;">&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x64;&#105;&#115;&#x61;&#x6e;&#122;&#117;&#x2e;&#99;&#111;&#109;</a><br>X-Original-To: text@disanzu.com<br>Delivered-To: text@disanzu.com<br>From: root <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x72;&#x6f;&#111;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#x2e;&#100;&#105;&#115;&#97;&#x6e;&#122;&#x75;&#46;&#99;&#111;&#109;">&#x72;&#x6f;&#111;&#x74;&#x40;&#109;&#97;&#x69;&#108;&#x2e;&#100;&#105;&#115;&#97;&#x6e;&#122;&#x75;&#46;&#99;&#111;&#109;</a><br>Date: Thu, 15 Jun 2017 16:57:48 -0400<br>To: text@disanzu.com<br>Subject: mail<br>User-Agent: Heirloom mailx 12.4 7/29/08<br>Content-Type: text/plain; charset=us-ascii<br>Status: R</p>
+<p>[root@mail ~]# su - text<br>[text@mail ~]$ mail<br>Heirloom Mail version 12.4 7/29/08.  Type ? for help.<br>“/var/spool/mail/text”: 6 messages 6 new<br>N  1 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  2 root                  Thu Jun 15 16:43  22/777   “ass”<br> N  3 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  4 root                  Thu Jun 15 16:44  22/798   “text mail”<br> N  5 root                  Thu Jun 15 16:44  22/799   “text mail”<br> N  6 root                  Thu Jun 15 16:57  22/790   “mail”<br>&amp; 6<br>Message  6:<br>From root@mail.disanzu.com  Thu Jun 15 16:57:48 2017<br>Return-Path: <a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#x69;&#x6c;&#46;&#100;&#x69;&#x73;&#x61;&#x6e;&#122;&#x75;&#x2e;&#x63;&#x6f;&#x6d;">&#x72;&#x6f;&#x6f;&#116;&#x40;&#x6d;&#97;&#x69;&#x6c;&#46;&#100;&#x69;&#x73;&#x61;&#x6e;&#122;&#x75;&#x2e;&#x63;&#x6f;&#x6d;</a><br>X-Original-To: text@disanzu.com<br>Delivered-To: text@disanzu.com<br>From: root <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#58;&#114;&#111;&#111;&#x74;&#x40;&#109;&#x61;&#x69;&#108;&#x2e;&#x64;&#105;&#115;&#97;&#110;&#122;&#x75;&#x2e;&#x63;&#x6f;&#109;">&#114;&#111;&#111;&#x74;&#x40;&#109;&#x61;&#x69;&#108;&#x2e;&#x64;&#105;&#115;&#97;&#110;&#122;&#x75;&#x2e;&#x63;&#x6f;&#109;</a><br>Date: Thu, 15 Jun 2017 16:57:48 -0400<br>To: text@disanzu.com<br>Subject: mail<br>User-Agent: Heirloom mailx 12.4 7/29/08<br>Content-Type: text/plain; charset=us-ascii<br>Status: R</p>
 <p>this is a mail </p>
 <p>&amp; </p>
 </blockquote>

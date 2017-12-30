@@ -197,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vwmare/">Vwmare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vwmare/">Vwmare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Window/">Window</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redhat/">redhat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li></ul>
                     </div>
                 </section>
                 
@@ -280,6 +280,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Windows安装pip" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/30/Windows安装pip/" class="article-date">
+      <time datetime="2017-12-30T09:08:36.000Z" itemprop="datePublished">2017-12-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/30/Windows安装pip/">Windows安装pip</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>一、windows 中pip的配置文件是%HOME%/pip/pip.ini(%HOME%为当前用户)<br>如果Windows的当前用户是King的话，那么配置文件的位置就是</p>
+<blockquote>
+<p>C：\Users\King\pip\pip.ini</p>
+</blockquote>
+<p>默认情况下pip文件夹和pip.ini文件都没有创建，需要自行创建。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Window/">Window</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/12/30/Windows安装pip/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-安装本地yum源脚本" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -309,54 +377,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
+              <blockquote>
 <p>rpm -qa|grep yum   //检查是否安装了yum.</p>
 </blockquote>
 <p>如果没有安装就执行下面的文件</p>
 <p>创建一个以xxx.sh结尾的文件</p>
 <p>＃!/bin/bash</p>
-<p>＃1.创建两个文件用于挂载文件</p>
-<blockquote>
-<p>mkdir /mnt/yum  </p>
-<p>mkdir  /dev/local</p>
-</blockquote>
-<p>＃2.挂载系统安装光盘</p>
-<blockquote>
-<p>mount /dev/cdrom /mnt/yum</p>
-</blockquote>
-<p>＃3.切换到源配置文件的目录下</p>
-<blockquote>
-<p>cd /etc/yum.repos.d</p>
-<p>rm -rf *</p>
-</blockquote>
-<p>＃4.创建一个新的文件，记住必须以.repo结尾的文件</p>
-<blockquote>
-<p>touch local.repo</p>
-</blockquote>
-<p>＃5.编辑xxx.repo文件，basefile指定的路径必须是挂载的目录</p>
-<blockquote>
-<p>echo -e “[base]\nbaseurl=file:///mnt/yum\ngpgcheck=0\nenabled=1\n” &gt;<br> local.repo</p>
-</blockquote>
-<p>＃6.把它复制到系统上</p>
-<blockquote>
-<p>cp /mnt/yum/*  /dev/local/</p>
-</blockquote>
-<p>＃7.清除所有的缓存</p>
-<blockquote>
-<p>yum clean all</p>
-</blockquote>
-<p>＃8.列出rpm包</p>
-<blockquote>
-<p>yum list</p>
-</blockquote>
-<p>保存文件并退出</p>
-<p>执行该脚本 sh xxx.sh 或chmod  +x  xxx.sh</p>
-<p>如果在负责的时候提示你系统空间不足的话，那么我们就直接使用开机自动挂载就可以不用负责到系统上了。</p>
-<blockquote>
-<p>vim /etc/fstab  //去这个文档下面编辑下面这句话</p>
-<p>/dev/cdrom /mnt/yum<br>iso9660 defaults,ro 0 0</p>
-</blockquote>
-
+<p>＃1.创建两个文件用于挂载文件<br>
+          
       
     </div>
     
@@ -369,6 +397,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2017/12/30/安装本地yum源脚本/#more">阅读全文 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
