@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d #切换到apache的日志文件 #在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录old=/usr/local/apache2/logs/access_log #分割后的存放目录，一般情况下，为了美观，分割后">
+<meta name="description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux--apache日志分割脚本">
 <meta property="og:url" content="http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d #切换到apache的日志文件 #在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录old=/usr/local/apache2/logs/access_log #分割后的存放目录，一般情况下，为了美观，分割后">
+<meta property="og:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-28T03:30:40.705Z">
+<meta property="og:updated_time" content="2017-12-30T02:40:13.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux--apache日志分割脚本">
-<meta name="twitter:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d #切换到apache的日志文件 #在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录old=/usr/local/apache2/logs/access_log #分割后的存放目录，一般情况下，为了美观，分割后">
+<meta name="twitter:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -319,7 +319,7 @@
 <p>#这里是以一天为单位的日志分割</p>
 <p>#记录下当天的日期</p>
 <blockquote>
-<p>date=date -d yesterday +% Y%m%d</p>
+<p>date=date -d yesterday +% Y%m%d<br><a id="more"></a></p>
 <p>#切换到apache的日志文件</p>
 <p>#在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录<br>old=/usr/local/apache2/logs/access_log</p>
 <p>#分割后的存放目录，一般情况下，为了美观，分割后的日志不会存放在跟原本的目录下。<br>mkdir -p /usr/local/apache2/logsback<br>old=/usr/local/apache/logsback/access_($date).log</p>
@@ -337,7 +337,7 @@
         <p><span>本文标题:</span><a href="/2017/12/28/Linux-apache日志分割脚本/">Linux--apache日志分割脚本</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
         <p><span>发布时间:</span>2017-12-28, 11:23:59</p>
-        <p><span>最后更新:</span>2017-12-28, 11:30:40</p>
+        <p><span>最后更新:</span>2017-12-30, 10:40:13</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/12/28/Linux-apache日志分割脚本/" title="Linux--apache日志分割脚本">http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
