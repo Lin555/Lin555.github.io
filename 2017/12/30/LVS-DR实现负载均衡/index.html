@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
-<meta name="keywords" content="shell">
+<meta name="description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell--apache日志分割脚本">
-<meta property="og:url" content="http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/index.html">
+<meta property="og:title" content="LVS--DR实现负载均衡">
+<meta property="og:url" content="http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
+<meta property="og:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-30T02:47:34.614Z">
+<meta property="og:updated_time" content="2017-12-30T11:34:27.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="shell--apache日志分割脚本">
-<meta name="twitter:description" content="#!/bin/bash #这里是以一天为单位的日志分割 #记录下当天的日期  date=date -d yesterday +% Y%m%d">
+<meta name="twitter:title" content="LVS--DR实现负载均衡">
+<meta name="twitter:description" content="###实验环境及需要的软件：  两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）    ipvsadm-1.24-8.1.i386.rpm  ###实验过程： ####Load Balancer服务器配置ip地址  [root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno335">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>shell--apache日志分割脚本 | Lin_haobin&#39;s Blog</title>
+<title>LVS--DR实现负载均衡 | Lin_haobin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Linux-apache日志分割脚本" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-LVS-DR实现负载均衡" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/28/Linux-apache日志分割脚本/" class="article-date">
-      <time datetime="2017-12-28T03:23:59.000Z" itemprop="datePublished">2017-12-28</time>
+      <a href="/2017/12/30/LVS-DR实现负载均衡/" class="article-date">
+      <time datetime="2017-12-30T11:32:42.000Z" itemprop="datePublished">2017-12-30</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      shell--apache日志分割脚本
+      LVS--DR实现负载均衡
     </h1>
   
 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,17 +315,103 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>#!/bin/bash</p>
-<p>#这里是以一天为单位的日志分割</p>
-<p>#记录下当天的日期</p>
+        <p>###实验环境及需要的软件：</p>
 <blockquote>
-<p>date=date -d yesterday +% Y%m%d<br><a id="more"></a></p>
-<p>#切换到apache的日志文件</p>
-<p>#在这里需要明确的知道你自己的apache的日志存放在那个目录下，避免找不到apache日志存放目录<br>old=/usr/local/apache2/logs/access_log</p>
-<p>#分割后的存放目录，一般情况下，为了美观，分割后的日志不会存放在跟原本的目录下。<br>mkdir -p /usr/local/apache2/logsback<br>old=/usr/local/apache/logsback/access_($date).log</p>
-<p>#把日志分割<br>mv $old $new</p>
-<p>#把apache挂起（目的是为了重新生成新的access_log日志文件）<br>pkill -l httpd<br>＃脚本写完后，那么我们就需要结合crontab －e命令每天凌晨12点执行该脚本</p>
+<p>两台 Redhat7 系统 （一台做负载均衡Load Balancer，一台做服务器Server）<br>    ipvsadm-1.24-8.1.i386.rpm</p>
 </blockquote>
+<p>###实验过程：</p>
+<p>####Load Balancer服务器<br>配置ip地址</p>
+<blockquote>
+<p>[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eno33554960<br>                IPADDR=172.25.0.10<br>                NETMASK=255.255.255.0<br>                GATEWAY=0.0.0.0</p>
+</blockquote>
+<p>安装 ipvsadm 管理程序</p>
+<blockquote>
+<p>[root@localhost ~]# rpm -ivh ipvsadm-1.27-4.el7.x86_64.rpm</p>
+</blockquote>
+<p>配置 VIP 设定脚本</p>
+<blockquote>
+<p>[root@localhost ~]# vi /opt/vip.sh</p>
+<pre><code>#!/bin/bash
+VIP=172.25.0.100
+/sbin/ifconfig eno33554960:0 $VIP broadcast $VIP netmask 255.255.255.255 up
+/sbin/route add -host $VIP dev eno33554960:0
+sysctl -w net.ipv4.conf.all.send_redirects=0
+sysctl -w net.ipv4.conf.default.send_redirects=0
+sysctl -w net.ipv4.conf.eno33554960.send_redirects=0
+</code></pre></blockquote>
+<p>设置脚本可执行权限</p>
+<blockquote>
+<p>[root@localhost ~]# chmod u+x /opt/vip.sh</p>
+</blockquote>
+<p>开机自启动</p>
+<blockquote>
+<p>[root@localhost ~]# echo “/opt/vip.sh” &gt;&gt; /etc/rc.local</p>
+</blockquote>
+<p>运行脚本</p>
+<blockquote>
+<p>[root@localhost ~]# /opt/vip.sh</p>
+</blockquote>
+<p>查看是否成功</p>
+<blockquote>
+<p>[root@localhost ~]# ifconfig eno33554960:0</p>
+</blockquote>
+<p>增加 virtual service</p>
+<blockquote>
+<p>[root@localhost ~]# ipvsadm -A -t 172.25.0.100:80 -s rr</p>
+</blockquote>
+<p>增加virtual service并指定 lvs 使用 DR 直接路由模式</p>
+<blockquote>
+<p>[root@localhost ~]# ipvsadm -a -t 172.25.0.100:80 -r 172.25.0.12:80 -g</p>
+</blockquote>
+<p>保存设置</p>
+<blockquote>
+<p>[root@localhost ~]# ipvsadm-save &gt; /etc/sysconfig/ipvsadm </p>
+</blockquote>
+<p>查看 ipvsadm  列表</p>
+<blockquote>
+<p>[root@localhost ~]# ipvsadm -l </p>
+</blockquote>
+<p>关闭防火墙<br>[root@localhost ~]# systemctl stop firewalld</p>
+<p>####Server服务器</p>
+<p>配置 VIP 设定脚本</p>
+<blockquote>
+<p>[root@localhost ~]# vi /opt/lvs-dr</p>
+<pre><code>#!/bin/sh
+VIP=172.25.0.100
+/sbin/ifconfig eno33554992 172.25.0.12/24
+/sbin/ifconfig lo:0 $VIP broadcast $VIP netmask 255.255.255.255 up
+/sbin/route add -host $VIP dev lo:0
+echo &quot;1&quot; &gt; /proc/sys/net/ipv4/conf/lo/arp_ignore
+echo &quot;2&quot; &gt; /proc/sys/net/ipv4/conf/lo/arp_announce
+echo &quot;1&quot; &gt; /proc/sys/net/ipv4/conf/all/arp_ignore
+echo &quot;2&quot; &gt; /proc/sys/net/ipv4/conf/all/arp_announce
+</code></pre></blockquote>
+<p>设置脚本可执行权限</p>
+<blockquote>
+<p>[root@classroom ~]# chmod +x /opt/lvs-dr </p>
+</blockquote>
+<p>开机自启动</p>
+<blockquote>
+<p>[root@classroom ~]# echo “/opt/lvs-dr” &gt;&gt;/etc/rc.local</p>
+</blockquote>
+<p>运行脚本    </p>
+<blockquote>
+<p>[root@classroom ~]# /opt/lvs-dr</p>
+</blockquote>
+<p>安转Apache</p>
+<blockquote>
+<p>[root@classroom ~]# yum -y install httpd</p>
+</blockquote>
+<p>编辑Apache网站主页面</p>
+<blockquote>
+<p>[root@classroom ~]# echo “this is a server” &gt; /var/www/html/index.html</p>
+</blockquote>
+<p>关闭防火墙</p>
+<blockquote>
+<p>[root@localhost ~]# systemctl stop firewalld</p>
+</blockquote>
+<p>####测试</p>
+<p>在Load Balancer服务器的浏览器输入Server的ip地址，看是否会跳转到Server的网站主页面</p>
 
       
     </div>
@@ -334,13 +420,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/28/Linux-apache日志分割脚本/">shell--apache日志分割脚本</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/30/LVS-DR实现负载均衡/">LVS--DR实现负载均衡</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
-        <p><span>发布时间:</span>2017-12-28, 11:23:59</p>
-        <p><span>最后更新:</span>2017-12-30, 10:47:34</p>
+        <p><span>发布时间:</span>2017-12-30, 19:32:42</p>
+        <p><span>最后更新:</span>2017-12-30, 19:34:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/28/Linux-apache日志分割脚本/" title="shell--apache日志分割脚本">http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/28/Linux-apache日志分割脚本/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/30/LVS-DR实现负载均衡/" title="LVS--DR实现负载均衡">http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/30/LVS-DR实现负载均衡/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +438,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/30/shell-检查apache是否启动/">
-                    shell--检查apache是否启动
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/28/Linux搭建postfix邮件服务器/">
-                    Linux搭建postfix邮件服务器
+                <a href="/2017/12/30/Windows安装pip/">
+                    Windows安装pip
                 </a>
             </div>
         
@@ -409,7 +489,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"shell--apache日志分割脚本　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"LVS--DR实现负载均衡　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -429,15 +509,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/30/shell-检查apache是否启动/" title="上一篇: shell--检查apache是否启动">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/28/Linux搭建postfix邮件服务器/" title="下一篇: Linux搭建postfix邮件服务器">
+            <a href="/2017/12/30/Windows安装pip/" title="下一篇: Windows安装pip">
                 <i class="fa fa-angle-right"></i>
             </a>
         
