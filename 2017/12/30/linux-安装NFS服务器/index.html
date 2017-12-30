@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="Apache只是一个web服务器，并不能运行JSP程序。如果要运行JSP程序，还需要安装Tomcat服务器软件，通过连接器组件整合Tomcat与Apche。当用户请求访问*.jsp网页时，由Aapache自动调用tomcat服务进行解析，并将结果页面返回到客户端浏览器。 我的安装环境及所需要的软件:">
-<meta name="keywords" content="redhat">
+<meta name="description" content="首先，在我们安装nfs的时候，我们需要了解两个套件：portmap和nfs－utils或者nfs－utiles－clients  ###portmapportmap是我们启动NFS的时候必须启动的一个准备工作。portmap会将自己管理的port map分配给client，让它连接nfs 服务器">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redhat部署tomcat+apache+java环境">
-<meta property="og:url" content="http://www.lhb520.cn/2017/12/30/Redhat部署tomcat-apache-java环境/index.html">
+<meta property="og:title" content="linux--安装NFS服务器">
+<meta property="og:url" content="http://www.lhb520.cn/2017/12/30/linux-安装NFS服务器/index.html">
 <meta property="og:site_name" content="Lin_haobin&#39;s Blog">
-<meta property="og:description" content="Apache只是一个web服务器，并不能运行JSP程序。如果要运行JSP程序，还需要安装Tomcat服务器软件，通过连接器组件整合Tomcat与Apche。当用户请求访问*.jsp网页时，由Aapache自动调用tomcat服务进行解析，并将结果页面返回到客户端浏览器。 我的安装环境及所需要的软件:">
+<meta property="og:description" content="首先，在我们安装nfs的时候，我们需要了解两个套件：portmap和nfs－utils或者nfs－utiles－clients  ###portmapportmap是我们启动NFS的时候必须启动的一个准备工作。portmap会将自己管理的port map分配给client，让它连接nfs 服务器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-30T03:03:40.628Z">
+<meta property="og:updated_time" content="2017-12-30T04:53:59.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redhat部署tomcat+apache+java环境">
-<meta name="twitter:description" content="Apache只是一个web服务器，并不能运行JSP程序。如果要运行JSP程序，还需要安装Tomcat服务器软件，通过连接器组件整合Tomcat与Apche。当用户请求访问*.jsp网页时，由Aapache自动调用tomcat服务进行解析，并将结果页面返回到客户端浏览器。 我的安装环境及所需要的软件:">
+<meta name="twitter:title" content="linux--安装NFS服务器">
+<meta name="twitter:description" content="首先，在我们安装nfs的时候，我们需要了解两个套件：portmap和nfs－utils或者nfs－utiles－clients  ###portmapportmap是我们启动NFS的时候必须启动的一个准备工作。portmap会将自己管理的port map分配给client，让它连接nfs 服务器">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Redhat部署tomcat+apache+java环境 | Lin_haobin&#39;s Blog</title>
+<title>linux--安装NFS服务器 | Lin_haobin&#39;s Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -275,11 +275,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Redhat部署tomcat-apache-java环境" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux-安装NFS服务器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/30/Redhat部署tomcat-apache-java环境/" class="article-date">
-      <time datetime="2017-12-30T02:52:31.000Z" itemprop="datePublished">2017-12-30</time>
+      <a href="/2017/12/30/linux-安装NFS服务器/" class="article-date">
+      <time datetime="2017-12-30T03:05:26.000Z" itemprop="datePublished">2017-12-30</time>
 </a>
 
 
@@ -294,7 +294,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Redhat部署tomcat+apache+java环境
+      linux--安装NFS服务器
     </h1>
   
 
@@ -305,7 +305,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redhat/">redhat</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -315,77 +315,55 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>   Apache只是一个web服务器，并不能运行JSP程序。如果要运行JSP程序，还需要安装Tomcat服务器软件，通过连接器组件整合Tomcat与Apche。当用户请求访问*.jsp网页时，由Aapache自动调用tomcat服务进行解析，并将结果页面返回到客户端浏览器。</p>
-<p>我的安装环境及所需要的软件:<br><a id="more"></a></p>
+        <p>首先，在我们安装nfs的时候，我们需要了解两个套件：portmap和nfs－utils或者nfs－utiles－clients </p>
+<p>###portmap<br>portmap是我们启动NFS的时候必须启动的一个准备工作。portmap会将自己管理的port map分配给client，让它连接nfs 服务器<br><a id="more"></a></p>
+<p>###nfs－utils或者nfs－utiles－clients</p>
+<p>这个是nfs的主要套件，它提供rpc.nfsd及rpc.mountd这两个NFS daemons（守护进程）与其相它相关documents与说明文件、执行档文档等的套件.<br>所以在开始安装的时候，我们需要先查看下是否安装了这两个套件。</p>
+<p>查看的命令很简单</p>
 <blockquote>
-<p>RHEL7.0<br>httpd-2.2.29.tar.gz<br>apache-tomcat-7.0.57.tar.gz<br>jdk-8u25-linux-i586.tar.gz<br>mod_jk-1.2.28-httpd-2.2.X.so  </p>
+<p>rpm -qa |grep nfs  和 rpm -qa |grep portmap</p>
 </blockquote>
-<p>安装过程：</p>
+<p>如果没有安装，那么我们使用</p>
 <blockquote>
-<p>[root@localhost Desktop]# ll<br>-rw-r–r–.  1 root root   8900571 Nov  1 08:35 apache-tomcat-7.0.57.tar.gz<br>drwxr-xr-x. 12  500  500      4096 Nov  1 19:21 httpd-2.2.29<br>-rw-r–r–.  1 root root   7537230 Nov  1 08:36 httpd-2.2.29.tar.gz<br>-rw-r–r–.  1 root root 162406866 Nov  1 08:36 jdk-8u25-linux-i586.tar.gz<br>-rw-r–r–.  1 root root    930293 Nov  1 08:34 mod_jk-1.2.28-httpd-2.2.X.so  </p>
+<p>yum -y install nfs* 和yum -y install portmap 把它们安装上去</p>
 </blockquote>
-<p>（1）安装httpd</p>
+<p>安装完后，我们需要启动下服务：  </p>
 <blockquote>
-<p>[root@localhost Desktop]# yum -y install gcc gcc-c++<br>[root@localhost Desktop]# tar xf httpd-2.2.29.tar.gz<br>[root@localhost Desktop]# cd httpd-2.2.29/<br>[root@localhost Desktop]# ./configure –prefix=/usr/local/apache2 –enable-rewrite –enable-so  </p>
+<p>/etc/rc.d/init.d/portmap start  –&gt;启动portmap<br>/etc/rc.d/init.d/nfs start          –&gt;启动nfs</p>
 </blockquote>
-<p>防火墙开放http协议、https协议和开启8080端口</p>
+<p>###安装NFS服务<br>服务器的配置：</p>
 <blockquote>
-<p>[root@localhost Desktop]# firewall-cmd –add-service=http<br>[root@localhost Desktop]# firewall-cmd –add-service=https<br>[root@localhost Desktop]# firewall-cmd –zone=public –add-port=80/tcp –permanent  </p>
+<p>[root@classroom Desktop]# yum -y install nfs-utils rpcbind<br>[root@classroom Desktop]# rpm -qa | grep nfs<br>libnfsidmap-0.25-9.el7.x86_64<br>nfs-utils-1.3.0-0.el7.x86_64<br>[root@classroom Desktop]# rpm -qa | grep rpcbind<br>rpcbind-0.2.0-23.el7.x86_64</p>
 </blockquote>
-<p>启动apache</p>
+<p>创建共享目录，并给予权限：</p>
 <blockquote>
-<p>[root@localhost Desktop]# /usr/local/apache2/bin/apachectl start  </p>
+<p>[root@classroom Desktop]# mkdir /var/web<br>[root@classroom Desktop]# chmod a+w /var/web/<br>[root@classroom Desktop]# cd /var/web/<br>[root@classroom web]# touch test.txt</p>
 </blockquote>
-<p>测试apache是否安装成功 </p>
+<p>编辑NFS主配置文件：</p>
 <blockquote>
-<p>[root@localhost Desktop]# echo “apache is successfully.” &gt;/usr/local/apache2/htdocs/index.htm  </p>
+<p>[root@classroom web]# vim /etc/exports</p>
 </blockquote>
-<p>打开浏览器输入<a href="http://主机ip地址" target="_blank" rel="noopener">http://主机ip地址</a></p>
-<p>（2）安装dk-8u25-linux-i586.tar.gz</p>
-<figure class="highlight plain"><figcaption><span>Desktop]# tar xf jdk-8u25-linux-i586.tar.gz  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]# mkdir /usr/lib/jvmnew  </span><br><span class="line">[root@localhost Desktop]# mv jdk1.8.0_25/ /usr/lib/jvmnew/  </span><br><span class="line">[root@localhost Desktop]# cat &gt;&gt; ~/.bash_profile &lt;&lt;end  `&gt; #set jdk env  </span><br><span class="line">&gt; export JAVA_HOME=/usr/lib/jvmnew/jdk1.8.0_25  </span><br><span class="line">&gt; export JRE_HOME=/usr/lib/jvmnew/jdk1.8.0_25/jre  </span><br><span class="line">&gt; export  </span><br><span class="line"> CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar:\$JAVA_HOME/lib:\  </span><br><span class="line">$JRE_HOME/lib:\$CLASSPATH  </span><br><span class="line">&gt; export PATH=\$JAVA_HOME/bin:\$PATH  </span><br><span class="line">&gt; end  </span><br><span class="line">[root@localhost Desktop]# source ~/.bash_profile  </span><br><span class="line">[root@localhost Desktop]# yum install glibc.i686 -y  </span><br><span class="line">[root@localhost Desktop]# java -version     //这里可以看到新版的jdk</span><br></pre></td></tr></table></figure>
-<p>因为系统本身就安装了jdk所以要更新一下配置</p>
+<p>###文件格式：共享路径  客户端主机（选项）<br>/var/web/  172.25.0.11(rw)</p>
+<p>重启下服务：</p>
 <blockquote>
-<p>[root@localhost Desktop]# update-alternatives –install /usr/bin/java java /usr/lib/jvmnew/jdk1.8.0_25/bin/java 300<br>[root@localhost Desktop]# update-alternatives –install /usr/bin/javac javac /usr/lib/jvmnew/jdk1.8.0_25/bin/javac 300  </p>
+<p>[root@classroom web]# systemctl restart nfs<br>[root@classroom web]# systemctl restart rpcbind</p>
 </blockquote>
-<p>下面两条命令需要我们去选择使用哪个版本（需要清楚我们要使用哪个版本以便我们去选择）</p>
+<p>客户端的配置：<br>显示NFS服务器的输出</p>
 <blockquote>
-<p>[root@localhost Desktop]# update-alternatives –config java<br>[root@localhost Desktop]# update-alternatives –config javac  </p>
+<p>[root@server0 var]# showmount -e classroom.example.com<br>Export list for classroom.example.com:<br>/var/web     172.25.0.11</p>
 </blockquote>
-<p>可用下命令检查是否成功</p>
+<p>创建共享目录，并实施挂载：</p>
 <blockquote>
-<p>[root@localhost Desktop]# ls -lA /etc/alternatives/  </p>
+<p>[root@server0 Desktop]# mkdir /var/web<br>[root@server0 Desktop]# mount classroom.example.com:/var/web /var/web</p>
 </blockquote>
-<p>（3）安装apache-tomcat-7.0.57.tar.gz</p>
+<p>设置开启自启动</p>
 <blockquote>
-<p>[root@localhost Desktop]# mkdir /usr/tomcat7<br>[root@localhost Desktop]# tar xf  apache-tomcat-7.0.57.tar.gz  -C /usr/tomcat7/     #启动<br>[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/startup.sh          #关闭<br>[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/shutdown.sh  </p>
+<p>[root@server0 /]# echo “classroom.example.com:/var/web /var/web nfs defaults 0 0” &gt;&gt;/etc/fstab</p>
 </blockquote>
-<p>查看tomcat启动  </p>
+<p>测试是否共享成功：</p>
 <blockquote>
-<p>[root@localhost Desktop]# ps -ef |grep tomcat  </p>
+<p>[root@server0 /]# ll /var/web/<br>-rw-r–r– 1 root root 14 Oct 30 10:22 test.txt</p>
 </blockquote>
-<p>将之前～/.bash_profile改掉如下内容重新加载</p>
-<blockquote>
-<p>[root@localhost Desktop]# vim ~/.bash_profile<br><figure class="highlight plain"><figcaption><span>jdk env  </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvmnew/jdk1.8.0_25  </span><br><span class="line">export JRE_HOME=/usr/lib/jvmnew/jdk1.8.0_25/jre  </span><br><span class="line">export CATALINA_HOME=/usr/tomcat7/apache-tomcat-7.0.57  </span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH:$CATALINA_HOME/lib/servlet-api.jar  </span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH  </span><br><span class="line">#set jdk env</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>重新加载</p>
-<blockquote>
-<p>source ~/.bash_profile  </p>
-</blockquote>
-<p>测试：<br>在浏览器输入<a href="http://ip地址:8080，查看是否有弹出tomcat的网页" target="_blank" rel="noopener">http://ip地址:8080，查看是否有弹出tomcat的网页</a></p>
-<p>给tomcat加密码</p>
-<blockquote>
-<p>[root@localhost Desktop]# vim /usr/tomcat7/apache-tomcat-7.0.57/conf/tomcat-users.xml   </p>
-</blockquote>
-<p>在这个文件，在中间插入如下行保存</p>
-<figure class="highlight plain"><figcaption><span>username</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">添加完后重新加载使配置生效</span><br><span class="line"></span><br><span class="line">&gt;[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/shutdown.sh  </span><br><span class="line">[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/startup.sh  </span><br><span class="line"></span><br><span class="line">测试：</span><br><span class="line">在浏览器输入http://ip地址:8080，查看是否有弹出让你输入用户名和密码的网页</span><br><span class="line"></span><br><span class="line">(4)将tomcat 服务与apache服务进行连接</span><br><span class="line"></span><br><span class="line">&gt;[root@localhost Desktop]# cp mod_jk-1.2.28-httpd-2.2.X.so /usr/local/apache2/modules/  </span><br><span class="line"></span><br><span class="line">修改apache配置文件如下，如果有就改，没有就加上</span><br><span class="line"></span><br><span class="line">&gt;[root@localhost Desktop]# vim /usr/local/apache2/conf/httpd.conf  </span><br><span class="line">###### </span><br><span class="line">&gt;servername www.lhb.com  </span><br><span class="line">DocumentRoot &quot;/usr/local/apache2/htdocs&quot;  </span><br><span class="line">######  </span><br><span class="line">&gt;Loadmodule jk_module modules/mod_jk-1.2.28-httpd-2.2.X.so  </span><br><span class="line">JkWorkersFile conf/workers.properties  </span><br><span class="line">JkLogFile logs/mod_jk.log  </span><br><span class="line">JkShmFile logs/mod_jk.shm  </span><br><span class="line">JkLogLevel notice  </span><br><span class="line">JkMount /*/*.jsp lhb  </span><br><span class="line">JkMountCopy All  </span><br><span class="line">AddType application/x-jsp .jsp  </span><br><span class="line"></span><br><span class="line">保存退出</span><br><span class="line"></span><br><span class="line">```[root@localhost Desktop]# cat &gt;&gt; /usr/local/apache2/conf/workers.properties &lt;&lt;end  </span><br><span class="line">&gt;worker.list=lhb  </span><br><span class="line">&gt;worker.lhb.port=8009  </span><br><span class="line">&gt;worker.lhb.host=localhost  </span><br><span class="line">&gt;worker.lhb.type=ajp13  </span><br><span class="line">&gt;worker.lhb.lbfactor=1  </span><br><span class="line">&gt;end</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>[root@localhost Desktop]# cd /usr/tomcat7/apache-tomcat-7.0.57<br>[root@localhost apache-tomcat-7.0.57]#  mv webapps webapps.bak<br>[root@localhost apache-tomcat-7.0.57]# ln -sf /usr/local/apache2/htdocs webapps<br>[root@localhost Desktop]# /usr/local/apache2/bin/apachectl stop<br>[root@localhost Desktop]# /usr/local/apache2/bin/apachectl start<br>[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/shutdown.sh<br>[root@localhost Desktop]# /usr/tomcat7/apache-tomcat-7.0.57/bin/startup.sh  </p>
-</blockquote>
-<p>测试：</p>
-<blockquote>
-<p>[root@localhost Desktop]# mkdir /usr/local/apache2/htdocs/apps<br>[root@localhost Desktop]# vim /usr/local/apache2/htdocs/apps/showtime.jsp<br>&lt;%@page language=”java” import=”java.util.*” %&gt;<br>now,thetimeis : &lt;%out.println(new Date());%&gt;  </p>
-</blockquote>
-<p><a href="http://主机ip地址/apps/showtime.jsp" target="_blank" rel="noopener">http://主机ip地址/apps/showtime.jsp</a></p>
 
       
     </div>
@@ -394,13 +372,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/30/Redhat部署tomcat-apache-java环境/">Redhat部署tomcat+apache+java环境</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/30/linux-安装NFS服务器/">linux--安装NFS服务器</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Lin_haobin</a></p>
-        <p><span>发布时间:</span>2017-12-30, 10:52:31</p>
-        <p><span>最后更新:</span>2017-12-30, 11:03:40</p>
+        <p><span>发布时间:</span>2017-12-30, 11:05:26</p>
+        <p><span>最后更新:</span>2017-12-30, 12:53:59</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/30/Redhat部署tomcat-apache-java环境/" title="Redhat部署tomcat+apache+java环境">http://www.lhb520.cn/2017/12/30/Redhat部署tomcat-apache-java环境/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/30/Redhat部署tomcat-apache-java环境/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/30/linux-安装NFS服务器/" title="linux--安装NFS服务器">http://www.lhb520.cn/2017/12/30/linux-安装NFS服务器/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.lhb520.cn/2017/12/30/linux-安装NFS服务器/　　作者: Lin_haobin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -412,16 +390,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/30/linux-安装NFS服务器/">
-                    linux--安装NFS服务器
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/30/shell-检查apache是否启动/">
-                    shell--检查apache是否启动
+                <a href="/2017/12/30/Redhat部署tomcat-apache-java环境/">
+                    Redhat部署tomcat+apache+java环境
                 </a>
             </div>
         
@@ -469,7 +441,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Redhat部署tomcat+apache+java环境　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"linux--安装NFS服务器　| Lin_haobin's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -489,15 +461,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/30/linux-安装NFS服务器/" title="上一篇: linux--安装NFS服务器">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/30/shell-检查apache是否启动/" title="下一篇: shell--检查apache是否启动">
+            <a href="/2017/12/30/Redhat部署tomcat-apache-java环境/" title="下一篇: Redhat部署tomcat+apache+java环境">
                 <i class="fa fa-angle-right"></i>
             </a>
         
